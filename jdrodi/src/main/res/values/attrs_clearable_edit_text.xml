@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClearableEditText">
+        <attr name="clearIconDrawable" format="color|reference" />
+        <attr name="clearIconDrawWhenFocused" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ClearableAutoCompleteTextView" parent="ClearableEditText">
+        <attr name="clearIconDrawable" />
+        <attr name="clearIconDrawWhenFocused" />
+    </declare-styleable>
+
+    <declare-styleable name="ClearableTextInputEditText" parent="ClearableEditText">
+        <attr name="clearIconDrawable" />
+        <attr name="clearIconDrawWhenFocused" />
+    </declare-styleable>
+</resources>

@@ -1,0 +1,101 @@
+<resources>
+    <string name="app_name">Jndroid Library</string>
+
+
+    <!--TODO: Dialog buttons-->
+    <string name="dialog_yes">YES</string>
+    <string name="dialog_no">NO</string>
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">CANCEL</string>
+
+    <string name="dialog_confirmation">Are you sure want to delete this status?</string>
+
+    <!--TODO: Rate dialog-->
+    <string name="rate_dialog_message">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>
+
+
+    <string name="dialog_title_warning">Warning</string>
+    <string name="dialog_title_rate_app">Rate this app</string>
+    <string name="dialog_rate_now">RATE NOW</string>
+    <string name="dialog_exit">EXIT</string>
+    <string name="dialog_already_rate">ALREADY RATED</string>
+    <string name="dialog_title_ads">Ads</string>
+    <string name="dialog_more">You will be redirect to the Google Play Store.</string>
+    <string name="developer_name">Rising Developer</string>
+    <string name="loading">Loading…</string>
+    <string name="error">error!</string>
+
+    <!--TODO: Permission-->
+    <string name="permission_not_granted">Required Permissions are not granted..</string>
+    <string name="permission_granted">Permission Granted</string>
+    <string name="permission_error">\"Error occurred! \"</string>
+    <string name="permission_required">Permissions Required</string>
+    <string name="permission_msg">Needs all permissions to work properly. Grant them in settings. And try again.</string>
+    <string name="permission_goto">GOTO SETTINGS</string>
+    <string name="wa_not_installed">WhatsApp have not been installed</string>
+    <string name="fb_not_installed">Facebook have not been installed</string>
+    <string name="instagram_not_installed">Instagram have not been installed</string>
+    <string name="package_name_fb">com.facebook.katana</string>
+    <string name="package_name_wa">com.whatsapp</string>
+    <string name="package_name_instagram">com.instagram.android</string>
+
+    <!--TODO: Crop Image And Background Eraser-->
+    <string name="label_back">Back</string>
+    <string name="label_add">Add</string>
+    <string name="label_done">Done</string>
+    <string name="label_undo">Undo</string>
+    <string name="label_redo">Redo</string>
+    <string name="label_erase">Erase</string>
+    <string name="label_auto_erase">Auto Erase</string>
+    <string name="label_restore">Restore</string>
+    <string name="label_zoom">Zoom</string>
+    <string name="label_offset">Offset</string>
+    <string name="label_radius">Radius</string>
+    <string name="label_threshold">Threshold</string>
+    <string name="label_cancel_image_erase">Cancelled erase background</string>
+    <string name="label_failed_image_erase">Sorry! Failed to erase background</string>
+
+    <string name="label_crop_image">Crop Image</string>
+    <string name="label_fit_image">FIT IMAGE</string>
+    <string name="label_square">SQUARE</string>
+    <string name="label_3_4">3:4</string>
+    <string name="label_4_3">4:3</string>
+    <string name="label_9_16">9:16</string>
+    <string name="label_16_9">16:9</string>
+    <string name="label_7_5">7:5</string>
+    <string name="label_free">FREE</string>
+    <string name="label_circle">CIRCLE</string>
+    <string name="label_circle_square">CIRCLE_SQUARE</string>
+    <string name="label_cancel_image_crop">Cancelled an image cropping</string>
+    <string name="label_failed_image_crop">Sorry! Failed to crop an image</string>
+
+    <!--TODO: Image and Video Selection-->
+    <string name="label_cancel_image_selection">Cancelled image selection</string>
+    <string name="label_failed_image_selection">Sorry! Failed to load image</string>
+    <string name="label_cancel_video_selection">Cancelled video selection</string>
+    <string name="label_failed_video_selection">Sorry! Failed to load video</string>
+
+    <!--TODO: Add Text-->
+    <string name="hint_enter_text_here">Enter text here</string>
+    <string name="tap">Tap here to write</string>
+    <string name="add_text">Add Text</string>
+    <string name="select_font_style">Select Font Style</string>
+    <string name="label_cancel_add_text">Add text canceled</string>
+    <string name="label_failed_add_text">Sorry! Failed to add text</string>
+
+    <!--TODO: Edit Image-->
+    <string name="label_cancel_image_edit">Cancelled image edit</string>
+    <string name="label_failed_image_edit">Sorry! Failed to edit image</string>
+    <string name="label_adjust">Adjust</string>
+    <string name="label_filters">Filters</string>
+    <string name="label_text">Text</string>
+    <string name="label_sticker">Stickers</string>
+    <string name="label_paint">Paint</string>
+    <string name="label_saturation">Saturation</string>
+    <string name="label_contrast">Contrast</string>
+    <string name="label_brightness">Brightness</string>
+    <string name="label_sharpness">Sharpness</string>
+
+    <string name="hint_drag_finger">Select brush image and drag finger in your photo</string>
+
+</resources>

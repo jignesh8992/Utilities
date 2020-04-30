@@ -1,0 +1,2 @@
+rootProject.name='Utilities'
+include ':app', ':jdrodi'
