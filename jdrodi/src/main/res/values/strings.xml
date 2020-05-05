@@ -98,4 +98,36 @@
 
     <string name="hint_drag_finger">Select brush image and drag finger in your photo</string>
 
+
+    <!--TODO: Authentication Label-->
+    <string name="label_hint_name">Name</string>
+    <string name="label_hint_email">Email</string>
+    <string name="label_hint_username">Username</string>
+    <string name="label_hint_password">Password</string>
+    <string name="label_signup">Sign Up</string>
+    <string name="label_signin">Sign In</string>
+    <string name="label_have_account">Already have an account? Sign In</string>
+    <string name="label_write_name">Write your name</string>
+    <string name="label_write_email">Write your email</string>
+    <string name="label_invalid_email">Write valid email</string>
+    <string name="label_write_username">Write your username</string>
+    <string name="label_write_otp">Please enter verification code sent to your email</string>
+    <string name="label_write_otp_length">Verification code must be six digits</string>
+    <string name="label_invalid_username">Username must be at least four characters</string>
+    <string name="label_write_password">Write your password</string>
+    <string name="label_write_old_password">Write your old password</string>
+    <string name="label_write_new_password">Write your new password</string>
+    <string name="label_invalid_password">Password must contain minimum 8 characters at least 1 Alphabet, 1 Number and 1 Special Character</string>
+    <string name="label_something_wrong">Something went wrong…</string>
+    <string name="label_verify_email">Email Verification</string>
+    <string name="label_verification_email">Email Verification?</string>
+    <string name="label_verify">Verify</string>
+    <string name="label_request_new">Resend</string>
+    <string name="label_forget_password_q">Forgot Password?</string>
+    <string name="label_forget_password">Forgot Password</string>
+    <string name="label_need_account">Don\'t have an account? Sign Up</string>
+    <string name="label_get_code">Get verification code</string>
+    <string name="label_reset">Reset</string>
+    <string name="label_please_wait">Please wait…</string>
+
 </resources>
