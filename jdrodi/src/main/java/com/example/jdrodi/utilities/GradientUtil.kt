@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.jdrodi.utilities
 
 import com.example.jdrodi.R

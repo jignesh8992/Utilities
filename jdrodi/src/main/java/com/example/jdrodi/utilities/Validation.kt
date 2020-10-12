@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.jdrodi.utilities
 
 import android.text.TextUtils

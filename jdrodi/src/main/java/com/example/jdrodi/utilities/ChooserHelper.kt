@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.jdrodi.utilities
 
 import android.annotation.TargetApi
@@ -6,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.provider.MediaStore
+import android.util.Log
 
 private var TAG: String = ChooserHelper::class.java.simpleName
 const val REQUEST_PHOTO = 1011

@@ -1,3 +1,5 @@
+@file:Suppress("unused")
+
 package com.example.jdrodi.utilities
 
 import android.content.Context
@@ -10,6 +12,14 @@ import android.widget.Toast
  */
 @Suppress("unused")
 object Toast {
+
+    fun Context.toast(message: String, length: Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(this, message, length).show()
+    }
+
+    fun Context.toast(resId: Int, length: Int = Toast.LENGTH_SHORT) {
+        Toast.makeText(this, getString(resId), length).show()
+    }
 
     fun short(mContext: Context, msg: String) {
         Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show()

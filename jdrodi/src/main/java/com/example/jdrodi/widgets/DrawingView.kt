@@ -7,23 +7,15 @@ import android.os.Handler
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
-import com.example.jdrodi.utilities.AssetsHelper.getBitmap
+import com.example.jdrodi.utilities.getBitmap
 import java.util.*
 
-class DrawingView @JvmOverloads constructor(
-    context: Context,
-    attrs: AttributeSet? = null,
-    defStyle: Int = 0
-) : View(context, attrs, defStyle) {
+class DrawingView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : View(context, attrs, defStyle) {
     // paint
-    private val mPaintSrcIn =
-        Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG or Paint.FILTER_BITMAP_FLAG)
-    private val mPaintDstIn =
-        Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG or Paint.FILTER_BITMAP_FLAG)
-    private val mPaintColor =
-        Paint(Paint.ANTI_ALIAS_FLAG)
-    private val mPaintEraser =
-        Paint(Paint.ANTI_ALIAS_FLAG)
+    private val mPaintSrcIn = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG or Paint.FILTER_BITMAP_FLAG)
+    private val mPaintDstIn = Paint(Paint.ANTI_ALIAS_FLAG or Paint.DITHER_FLAG or Paint.FILTER_BITMAP_FLAG)
+    private val mPaintColor = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val mPaintEraser = Paint(Paint.ANTI_ALIAS_FLAG)
 
     // canvas
     private val mLayerCanvas = Canvas()
@@ -31,12 +23,9 @@ class DrawingView @JvmOverloads constructor(
 
     // draw lines
     private var isLine = false
-    private val mDrawLines =
-        ArrayList<DrawLine>()
-    private val mUndoneOps =
-        ArrayList<DrawLine>()
-    private val mCurrentLine =
-        DrawLine()
+    private val mDrawLines = ArrayList<DrawLine>()
+    private val mUndoneOps = ArrayList<DrawLine>()
+    private val mCurrentLine = DrawLine()
 
     // draw stickers
     private var isStickers = false
@@ -44,6 +33,30 @@ class DrawingView @JvmOverloads constructor(
     private val mTouches: ArrayList<DrawStickers>
     private val mUndoTouches: ArrayList<DrawStickers>
     private var mSticker: Bitmap?
+
+
+    init {
+        mPaintSrcIn.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
+        mPaintDstIn.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_IN)
+        mPaintColor.style = Paint.Style.STROKE
+        mPaintColor.strokeJoin = Paint.Join.ROUND
+        mPaintColor.strokeCap = Paint.Cap.ROUND
+        mPaintEraser.set(mPaintColor)
+        mPaintEraser.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
+        mPaintEraser.maskFilter = BlurMaskFilter(
+            resources.displayMetrics.density * 4,
+            BlurMaskFilter.Blur.NORMAL
+        )
+        mTouches = ArrayList()
+        mUndoTouches = ArrayList()
+        val bitmap = getBitmap(context, "spray/1.png")!!
+        mSticker = bitmap
+        val point = Point()
+        point.x = 0
+        point.y = 0
+        mCurrentSticker = DrawStickers(point, mSticker)
+    }
+
     fun setColor(color: Int) {
         mCurrentLine.reset()
         mCurrentLine.type = DrawLine.Type.PAINT
@@ -240,25 +253,5 @@ class DrawingView @JvmOverloads constructor(
         }
     }
 
-    init {
-        mPaintSrcIn.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_IN)
-        mPaintDstIn.xfermode = PorterDuffXfermode(PorterDuff.Mode.DST_IN)
-        mPaintColor.style = Paint.Style.STROKE
-        mPaintColor.strokeJoin = Paint.Join.ROUND
-        mPaintColor.strokeCap = Paint.Cap.ROUND
-        mPaintEraser.set(mPaintColor)
-        mPaintEraser.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
-        mPaintEraser.maskFilter = BlurMaskFilter(
-            resources.displayMetrics.density * 4,
-            BlurMaskFilter.Blur.NORMAL
-        )
-        mTouches = ArrayList()
-        mUndoTouches = ArrayList()
-        val bitmap = context.getBitmap("spray/1.png")
-        mSticker = bitmap
-        val point = Point()
-        point.x = 0
-        point.y = 0
-        mCurrentSticker = DrawStickers(point, mSticker)
-    }
+
 }
