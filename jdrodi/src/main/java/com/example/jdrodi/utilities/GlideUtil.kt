@@ -13,6 +13,14 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import java.io.File
 
+
+/**
+ * GlideUtil.kt - A simple class to load image with glide
+ * @author  Jignesh N Patel
+ * @date 14-04-2020
+ */
+
+
 /**
  *  Load Image using Glide
  *

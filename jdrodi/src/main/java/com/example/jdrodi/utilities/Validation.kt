@@ -7,6 +7,13 @@ import android.util.Patterns
 import java.util.regex.Matcher
 import java.util.regex.Pattern
 
+/**
+ * Toast.kt - A simple class for validations.
+ * @author  Jignesh N Patel
+ * @date 07-11-2019
+ */
+
+
 
 /**
  *  Check if enter email address is valid or not

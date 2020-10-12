@@ -18,6 +18,13 @@ import java.util.*
 
 
 /**
+ * Toast.kt - A simple class for common extensive functions.
+ * @author  Jignesh N Patel
+ * @date 07-11-2019
+ */
+
+
+/**
  * Check weather internet connection is running or not
  *
  * @return true if working otherwise false

@@ -4,6 +4,11 @@ package com.example.jdrodi.utilities
 
 import com.example.jdrodi.R
 
+/**
+ * GradientUtil.kt - A simple class to get list of gradients drawable
+ * @author  Jignesh N Patel
+ * @date 14-04-2020
+ */
 
 fun getGradients(): MutableList<Gradient> {
     val gradients: MutableList<Gradient> = mutableListOf()

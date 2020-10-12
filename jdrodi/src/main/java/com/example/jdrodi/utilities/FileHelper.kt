@@ -132,7 +132,6 @@ object FileHelper {
      * Callers should check whether the path is local before assuming it represents a local file.
      *
      * @param uri     The Uri to query.
-     * @author Jignehs
      */
     @Suppress("DEPRECATION")
     @SuppressLint("NewApi")
@@ -161,7 +160,7 @@ object FileHelper {
                         )
                         getDataColumn(contentUri, null, null)
                     } catch (e: NumberFormatException) {
-                        Log.i(TAG, e.message)
+                        Log.i(TAG, e.message!!)
                         null
                     }
 
@@ -204,7 +203,6 @@ object FileHelper {
     /**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is ExternalStorageProvider.
-     * @author Jignehs
      */
     private fun isExternalStorageDocument(uri: Uri): Boolean {
         return "com.android.externalstorage.documents" == uri.authority
@@ -213,7 +211,6 @@ object FileHelper {
     /**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is DownloadsProvider.
-     * @author Jignehs
      */
     private fun isDownloadsDocument(uri: Uri): Boolean {
         return "com.android.providers.downloads.documents" == uri.authority
@@ -222,7 +219,6 @@ object FileHelper {
     /**
      * @param uri The Uri to check.
      * @return Whether the Uri authority is MediaProvider.
-     * @author Jignehs
      */
     private fun isMediaDocument(uri: Uri): Boolean {
         return "com.android.providers.media.documents" == uri.authority

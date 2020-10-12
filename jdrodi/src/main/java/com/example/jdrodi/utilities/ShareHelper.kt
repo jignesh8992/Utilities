@@ -15,6 +15,13 @@ import java.io.File
 import java.util.*
 
 
+/**
+ * PlaceUtil.kt - A simple class for share media and text
+ * @author  Jignesh N Patel
+ * @date 14-04-2020
+ */
+
+
 private const val TAG = "ShareHelper"
 
 
@@ -90,7 +97,7 @@ fun Context.shareImage(path: String, packageName: String?) {
                 getString(R.string.package_name_instagram) -> getString(R.string.instagram_not_installed)
                 else -> getString(R.string.fb_not_installed)
             }
-            Toast.short(this, msg)
+            toast(msg)
 
             // open play store
             val intent = Intent("android.intent.action.VIEW")
@@ -147,7 +154,7 @@ fun Context.shareVideo(path: String, packageName: String? = null) {
                 getString(R.string.package_name_instagram) -> getString(R.string.instagram_not_installed)
                 else -> getString(R.string.fb_not_installed)
             }
-            Toast.short(this, msg)
+            toast(msg)
 
             // open play store
             val intent = Intent("android.intent.action.VIEW")

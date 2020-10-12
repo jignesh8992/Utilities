@@ -15,6 +15,13 @@ import androidx.core.content.ContextCompat
 import com.example.jdrodi.R
 
 
+/**
+ * DialogHelper.kt - A simple class for creating alert dialog
+ * @author  Jignesh N Patel
+ * @date 12-10-2020
+ */
+
+
 fun Context.showAlert(
     titleText: String? = null,
     message: String,

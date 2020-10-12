@@ -8,6 +8,12 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.fragment.app.Fragment
 
+/**
+ * KeyboardUtil.kt - A simple class to hides keyboard
+ * @author  Jignesh N Patel
+ * @date 14-04-2020
+ */
+
 
 /**
  *  Hide keyboard in fragment

@@ -6,7 +6,14 @@ import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.example.jdrodi.utilities.Toast.toast
+
+
+/**
+ * PlaceUtil.kt - A simple class for find out nearby places on google map
+ * @author  Jignesh N Patel
+ * @date 14-04-2020
+ */
+
 
 /**
  * ToDo.. Redirect to google map for find out nearby places

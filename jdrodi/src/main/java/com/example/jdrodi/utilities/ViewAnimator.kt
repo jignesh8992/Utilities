@@ -8,6 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 
 /**
+ * Toast.kt - A simple class for animating views.
+ * @author  Jignesh N Patel
+ * @date 07-11-2019
+ */
+
+
+/**
  *  Animate slide up the view
  *
  * @view The view to be slide up

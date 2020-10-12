@@ -10,12 +10,12 @@ import android.graphics.Paint.Join
 import android.graphics.Shader.TileMode
 import android.os.AsyncTask
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.View.OnTouchListener
 import androidx.appcompat.widget.AppCompatImageView
-import com.example.jdrodi.utilities.Log
-import com.example.jdrodi.utilities.Toast
+import com.example.jdrodi.utilities.toast
 import java.util.*
 import kotlin.math.abs
 
@@ -487,7 +487,7 @@ class EraserView : AppCompatImageView, OnTouchListener {
             invalidate()
             return
         }
-        Toast.short(mContext!!, "Please Draw a closed path!!!")
+        mContext!!.toast("Please Draw a closed path!!!")
     }
 
     fun undoChange() {

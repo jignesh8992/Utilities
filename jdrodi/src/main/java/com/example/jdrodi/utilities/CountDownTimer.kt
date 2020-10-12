@@ -8,6 +8,13 @@ import android.os.Message
 import android.os.SystemClock
 
 /**
+ * CountDownTimer.kt - A simple CountDownTimer class for count down time with pause and resume feature
+ * @author  Jignesh N Patel
+ * @date 12-10-2020
+ */
+
+
+/**
  * Schedule a countdown until a time in the future, with
  * regular notifications on intervals along the way.
  *
@@ -25,6 +32,8 @@ import android.os.SystemClock
  * }
  * }.start();
 </pre> *
+
+
  *
  * The calls to [.onTick] are synchronized to this object so that
  * one call to [.onTick] won't ever occur before the previous

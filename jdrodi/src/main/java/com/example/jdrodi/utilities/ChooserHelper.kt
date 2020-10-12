@@ -14,6 +14,12 @@ private var TAG: String = ChooserHelper::class.java.simpleName
 const val REQUEST_PHOTO = 1011
 const val REQUEST_VIDEO = 1012
 
+/**
+ * ChooserHelper.kt - A simple class for image and video pick
+ * @author  Jignesh N Patel
+ * @date 12-10-2020
+ */
+
 object ChooserHelper {
 
     /**

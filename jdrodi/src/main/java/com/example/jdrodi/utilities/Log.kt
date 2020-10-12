@@ -5,6 +5,12 @@ package com.example.jdrodi.utilities
 import android.util.Log
 import com.example.jdrodi.BuildConfig
 
+/**
+ * Log.kt - A simple log class to print logs in debug mode only
+ * @author  Jignesh N Patel
+ * @date 14-04-2020
+ */
+
 fun i(tag: String, message: String) {
     if (BuildConfig.DEBUG) {
         Log.i(tag, message)

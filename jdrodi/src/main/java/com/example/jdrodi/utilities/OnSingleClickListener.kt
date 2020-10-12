@@ -10,6 +10,7 @@ import android.view.View
  * @author  Jignesh N Patel
  * @date 14-04-2020
  */
+
 @Suppress("unused")
 abstract class OnSingleClickListener : View.OnClickListener {
 
