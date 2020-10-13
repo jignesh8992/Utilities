@@ -21,54 +21,54 @@ import com.example.jdrodi.R
  * @date 12-10-2020
  */
 
+fun Context.showAlert(title: String? = null, msg: String? = null, positiveText: String? = null, negativeText: String? = null, fontPath: String? = null, positive: OnPositive? = null) {
 
-fun Context.showAlert(
-    titleText: String? = null,
-    message: String,
-    positiveText: String = getString(R.string.dialog_yes),
-    negativeText: String = getString(R.string.dialog_no),
-    fontPath: String? = null,
-    positive: OnPositive? = null
-) {
+    val dialog = AlertDialog.Builder(this)
+    var alert: AlertDialog? = null
 
-    if (titleText != null) {
+
+    dialog.setCancelable(false)
+    if (title != null) {
         // Initialize a new foreground color span instance
         val foregroundColorSpan = ForegroundColorSpan(ContextCompat.getColor(this, R.color.colorPrimaryDark))
-
-        // Initialize a new spannable string builder instance
-        val ssBuilder = SpannableStringBuilder(titleText)
-        //  ssBuilder.setSpan(RelativeSizeSpan(0.50f), 0, titleText.length, 0)// set size
-        // Apply the text color span
-        ssBuilder.setSpan(foregroundColorSpan, 0, titleText.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        val ssBuilder = SpannableStringBuilder(title)
+        ssBuilder.setSpan(foregroundColorSpan, 0, title.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        dialog.setTitle(ssBuilder)
     }
-
-
-    val dialog1 = AlertDialog.Builder(this)
-        .setMessage(message)
-        .setPositiveButton(positiveText) { _, _ ->
+    if (msg != null) {
+        dialog.setMessage(msg)
+    }
+    if (positiveText != null) {
+        dialog.setPositiveButton(positiveText) { _, _ ->
+            alert?.dismiss()
             positive?.onYes()
-
         }
-        .setNegativeButton(negativeText) { _, _ ->
-            // dialog1.dismiss();
+    }
+    if (negativeText != null) {
+        dialog.setNegativeButton(negativeText) { _, _ ->
+            alert?.dismiss()
         }
-        .show()
-
-    if (titleText != null) {
-        dialog1.setTitle(titleText)
     }
 
-    try {
-        val textView = dialog1.findViewById<TextView>(android.R.id.message)
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15f)
-        val face = Typeface.createFromAsset(assets, fontPath)
-        textView.typeface = face
-    } catch (e: Exception) {
-        Log.e("Error", e.toString())
-    }
+    alert = dialog.create()
+    alert.show()
 
+
+    if (fontPath != null) {
+        val textView = alert.findViewById<TextView>(android.R.id.message)
+        try {
+            textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 15f)
+            val face = Typeface.createFromAsset(assets, fontPath)
+            textView.typeface = face
+        } catch (e: Exception) {
+            Log.e("showAlert", e.toString())
+        }
+    }
 }
+
 
 interface OnPositive {
     fun onYes()
+    fun onNo() {}
 }
+
