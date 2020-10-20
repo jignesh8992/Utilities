@@ -47,6 +47,7 @@ fun Context.showAlert(title: String? = null, msg: String? = null, positiveText: 
     if (negativeText != null) {
         dialog.setNegativeButton(negativeText) { _, _ ->
             alert?.dismiss()
+            positive?.onNo()
         }
     }
 
