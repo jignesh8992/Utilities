@@ -13,11 +13,31 @@ import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.core.content.ContextCompat
 import com.example.jdrodi.R
-import com.example.jdrodi.shadow.ShapeUtils
+
+/*
+Attributes
+
+android:foreground
+shadowMargin
+shadowMarginTop
+shadowMarginLeft
+shadowMarginRight
+shadowMarginBottom
+cornerRadius
+cornerRadiusTL
+cornerRadiusTR
+cornerRadiusBL
+cornerRadiusBR
+foregroundColor
+shadowColor
+shadowDx
+shadowDy
+shadowRadius
+backgroundColor
+* */
 
 
-open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet: AttributeSet? = null, defStyleInt: Int = 0)
-    : ViewGroup(context, attributeSet, defStyleInt) {
+open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet: AttributeSet? = null, defStyleInt: Int = 0) : ViewGroup(context, attributeSet, defStyleInt) {
     private val DEFAULT_CHILD_GRAVITY = Gravity.TOP or Gravity.START
 
     private var SIZE_UNSET = -1
@@ -148,8 +168,10 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
     }
 
     private fun updatePaintShadow(radius: Float, dx: Float, dy: Float, color: Int) {
-        bgPaint.setShadowLayer(radius, dx, dy,
-                color)
+        bgPaint.setShadowLayer(
+            radius, dx, dy,
+            color
+        )
         invalidate()
     }
 
@@ -176,14 +198,14 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
             measureChildWithMargins(child, widthSpec, 0, heightSpec, 0)
             val lp = child.layoutParams as LayoutParams
             maxWidth = if (shadowMeasureWidthMatchParent)
-                        Math.max(maxWidth, child.measuredWidth + lp.leftMargin + lp.rightMargin)
-                    else
-                        Math.max(maxWidth, child.measuredWidth + shadowMarginLeft + shadowMarginRight + lp.leftMargin + lp.rightMargin)
+                Math.max(maxWidth, child.measuredWidth + lp.leftMargin + lp.rightMargin)
+            else
+                Math.max(maxWidth, child.measuredWidth + shadowMarginLeft + shadowMarginRight + lp.leftMargin + lp.rightMargin)
 
             maxHeight = if (shadowMeasureHeightMatchParent)
-                        Math.max(maxHeight, child.measuredHeight + lp.topMargin + lp.bottomMargin)
-                    else
-                        Math.max(maxHeight, child.measuredHeight + shadowMarginTop + shadowMarginBottom + lp.topMargin + lp.bottomMargin)
+                Math.max(maxHeight, child.measuredHeight + lp.topMargin + lp.bottomMargin)
+            else
+                Math.max(maxHeight, child.measuredHeight + shadowMarginTop + shadowMarginBottom + lp.topMargin + lp.bottomMargin)
 
             childState = View.combineMeasuredStates(childState, child.measuredState)
         }
@@ -196,11 +218,15 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
             maxHeight = Math.max(maxHeight, drawable.minimumHeight)
             maxWidth = Math.max(maxWidth, drawable.minimumWidth)
         }
-        setMeasuredDimension(View.resolveSizeAndState(maxWidth
-                , if (shadowMeasureWidthMatchParent) widthMeasureSpec else widthSpec, childState),
-                View.resolveSizeAndState(maxHeight
-                        , if (shadowMeasureHeightMatchParent) heightMeasureSpec else heightSpec,
-                        childState shl View.MEASURED_HEIGHT_STATE_SHIFT))
+        setMeasuredDimension(
+            View.resolveSizeAndState(
+                maxWidth, if (shadowMeasureWidthMatchParent) widthMeasureSpec else widthSpec, childState
+            ),
+            View.resolveSizeAndState(
+                maxHeight, if (shadowMeasureHeightMatchParent) heightMeasureSpec else heightSpec,
+                childState shl View.MEASURED_HEIGHT_STATE_SHIFT
+            )
+        )
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {
@@ -269,12 +295,16 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
         canvas?.let {
             val w = measuredWidth
             val h = measuredHeight
-            val path = ShapeUtils.roundedRect(shadowMarginLeft.toFloat(), shadowMarginTop.toFloat(), (w - shadowMarginRight).toFloat()
-                    , (h - shadowMarginBottom).toFloat()
-                    , cornerRadiusTL
-                    , cornerRadiusTR
-                    , cornerRadiusBR
-                    , cornerRadiusBL)
+            val path = ShapeUtils.roundedRect(
+                shadowMarginLeft.toFloat(),
+                shadowMarginTop.toFloat(),
+                (w - shadowMarginRight).toFloat(),
+                (h - shadowMarginBottom).toFloat(),
+                cornerRadiusTL,
+                cornerRadiusTR,
+                cornerRadiusBR,
+                cornerRadiusBL
+            )
             it.drawPath(path, bgPaint)
             canvas.clipPath(path)
         }
@@ -287,12 +317,16 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
             canvas.save()
             val w = measuredWidth
             val h = measuredHeight
-            val path = ShapeUtils.roundedRect(shadowMarginLeft.toFloat(), shadowMarginTop.toFloat(), (w - shadowMarginRight).toFloat()
-                    , (h - shadowMarginBottom).toFloat()
-                    , cornerRadiusTL
-                    , cornerRadiusTR
-                    , cornerRadiusBR
-                    , cornerRadiusBL)
+            val path = ShapeUtils.roundedRect(
+                shadowMarginLeft.toFloat(),
+                shadowMarginTop.toFloat(),
+                (w - shadowMarginRight).toFloat(),
+                (h - shadowMarginBottom).toFloat(),
+                cornerRadiusTL,
+                cornerRadiusTR,
+                cornerRadiusBR,
+                cornerRadiusBL
+            )
             canvas.clipPath(path)
             drawForeground(canvas)
             canvas.restore()
@@ -310,11 +344,15 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
                 if (foregroundDrawInPadding) {
                     selfBounds.set(0, 0, w, h)
                 } else {
-                    selfBounds.set(paddingLeft, paddingTop,
-                            w - paddingRight, h - paddingBottom)
+                    selfBounds.set(
+                        paddingLeft, paddingTop,
+                        w - paddingRight, h - paddingBottom
+                    )
                 }
-                Gravity.apply(foregroundDrawGravity, it.intrinsicWidth,
-                        it.intrinsicHeight, selfBounds, overlayBounds)
+                Gravity.apply(
+                    foregroundDrawGravity, it.intrinsicWidth,
+                    it.intrinsicHeight, selfBounds, overlayBounds
+                )
                 it.bounds = overlayBounds
             }
             it.draw(canvas)
