@@ -19,7 +19,7 @@ Step 2. Add the dependency
 	       implementation 'com.github.jignesh8992:Utilities:v1.1.5'
 	}
 	
-### Extensive functions
+### Extensive functions:
 
 <details><summary>
 <a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt">
@@ -234,6 +234,60 @@ WallpaperUtil
 </a>
 </summary></details>	
 
+
+### Widgets:
+<ol>
+ 	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/ColorCircleDrawable.kt" >
+	ColorCircleDrawable
+	</a>
+	</li>	
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/DrawingView.kt" >
+	DrawingView
+	</a>
+	</li>	
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/EraserView.kt" >
+	EraserView
+	</a>
+	</li>	
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/LoadingDots.kt" >
+	LoadingDots
+	</a>
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/LockableViewPager.kt" >
+	LockableViewPager
+	</a>
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/MaterialSpinner.kt" >
+	MaterialSpinner
+	</a>
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/SquareCardLayout.kt" >
+	SquareCardLayout
+	</a>
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/SquareConstraintLayout.kt" >
+	SquareConstraintLayout
+	</a>
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/SquareLayout.kt" >
+	SquareLayout
+	</a>
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/widgets/TouchImageView.kt" >
+	TouchImageView
+	</a>
+	</li>
+</ol>
 
 
 ## Contributing
