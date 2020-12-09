@@ -29,7 +29,7 @@ import kotlin.math.min
 
 
 /**
- * BitmapHelper.kt - A simple class for bitmap utils
+ * BitmapUtil.kt - A simple class for bitmap utils
  * @author  Jignesh N Patel
  * @date 12-10-2020
  */

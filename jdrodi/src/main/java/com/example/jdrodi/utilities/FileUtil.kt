@@ -27,7 +27,7 @@ import java.util.*
 private val TAG = FileHelper::class.java.simpleName
 
 /**
- * FileHelper.kt - A simple class to perform operations on file.
+ * FileUtil.kt - A simple class to perform operations on file.
  * @author  Jignesh N Patel
  * @date 14-04-2020
  */

@@ -14,7 +14,7 @@ import java.io.ByteArrayOutputStream
  * @date 08-11-2019
  */
 @Suppress("unused")
-class SPHelper(mContext: Context) {
+class SPUtil(mContext: Context) {
 
 
     // Preferences name to bes used for save and read value from sp

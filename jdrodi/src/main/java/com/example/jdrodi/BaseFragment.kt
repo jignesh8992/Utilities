@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import com.example.jdrodi.utilities.SPHelper
+import com.example.jdrodi.utilities.SPUtil
 
 
 /**
@@ -19,7 +19,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
 
 
     lateinit var mContext: FragmentActivity // Context of the current activity
-    lateinit var sp: SPHelper // Obj. of SharedPreference
+    lateinit var sp: SPUtil // Obj. of SharedPreference
 
     // variable to track event time
     var mLastClickTime: Long = 0
@@ -38,7 +38,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mContext = activity!!
-        sp = SPHelper(mContext)
+        sp = SPUtil(mContext)
         initViews()
         initAds()
         initData()

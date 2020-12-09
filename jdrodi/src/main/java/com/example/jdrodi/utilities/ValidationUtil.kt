@@ -14,7 +14,6 @@ import java.util.regex.Pattern
  */
 
 
-
 /**
  *  Check if enter email address is valid or not
  *
@@ -22,8 +21,8 @@ import java.util.regex.Pattern
  */
 
 @Suppress("unused")
-fun isValidEmail(target: CharSequence): Boolean {
-    return !TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches()
+fun String.isValidEmail(): Boolean {
+    return !TextUtils.isEmpty(this) && Patterns.EMAIL_ADDRESS.matcher(this).matches()
 }
 
 
@@ -33,11 +32,11 @@ fun isValidEmail(target: CharSequence): Boolean {
  * @return true if matched otherwise false
  */
 @Suppress("unused")
-fun isValidPassword(password: String): Boolean {
+fun String.isValidPassword(): Boolean {
     val pattern: Pattern
     val matcher: Matcher
     val passwordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$"
     pattern = Pattern.compile(passwordPattern)
-    matcher = pattern.matcher(password)
+    matcher = pattern.matcher(this)
     return matcher.matches()
 }

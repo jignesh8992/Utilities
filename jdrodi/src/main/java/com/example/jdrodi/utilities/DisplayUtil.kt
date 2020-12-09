@@ -8,7 +8,7 @@ import android.util.TypedValue
 import kotlin.math.roundToInt
 
 /**
- * DisplayHelper.kt - A simple class to perform display related task.
+ * DisplayUtil.kt - A simple class to perform display related task.
  * @author  Jignesh N Patel
  * @date 14-04-2020
  */

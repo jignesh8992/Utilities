@@ -14,7 +14,7 @@ import java.io.IOException
 
 
 /**
- * CacheHelper.kt - A simple class for cache utils
+ * CacheUtil.kt - A simple class for cache utils
  * @author  Jignesh N Patel
  * @date 12-10-2020
  */

@@ -3,7 +3,7 @@ package com.example.jdrodi.utilities
 import android.util.Base64
 
 /**
- * DisplayHelper.kt - A simple class to encode and decode string using Base64.
+ * DisplayUtil.kt - A simple class to encode and decode string using Base64.
  * @author  Jignesh N Patel
  * @date 11-11-2020
  */

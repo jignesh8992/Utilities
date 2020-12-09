@@ -16,7 +16,7 @@ import com.example.jdrodi.R
 
 
 /**
- * DialogHelper.kt - A simple class for creating alert dialog
+ * DialogUtil.kt - A simple class for creating alert dialog
  * @author  Jignesh N Patel
  * @date 12-10-2020
  */

@@ -13,7 +13,7 @@ import java.io.InputStream
 import java.util.*
 
 /**
- * AssetsHelper.kt - A simple class for assets utils
+ * AssetsUtil.kt - A simple class for assets utils
  * @author  Jignesh N Patel
  * @date 12-10-2020
  */

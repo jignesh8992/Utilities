@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 
 /**
- * UiHelper.kt - A simple helper class to make ui responsive.
+ * UiUtil.kt - A simple helper class to make ui responsive.
  *
  * @author Jignesh N Patel
  * @date 14-11-2019
