@@ -18,6 +18,223 @@ Step 2. Add the dependency
 	dependencies {
 	       implementation 'com.github.jignesh8992:Utilities:v1.1.5'
 	}
+	
+### Extensive functions
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt">
+AssetsUtil
+</a>
+</summary>	
+<ol>
+ 	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/d6e1bf44dcd93ea91ef20809a59cfe6bad0af011/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L30" >
+	listSize
+	</a>
+	</li>
+</ol>
+</details>
+
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/BatteryUtil.kt">
+BatteryUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/BitmapUtil.kt">
+BitmapUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/CacheUtil.kt">
+CacheUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/ChooserUtil.kt">
+ChooserUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/CountDownTimer.kt">
+CountDownTimer
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/DialogUtil.kt">
+DialogUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/EncoderUtil.kt">
+EncoderUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/FileUtil.kt">
+FileUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/GeneralUtils.kt">
+GeneralUtils
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/GlideUtil.kt">
+GlideUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/GradientUtil.kt">
+GradientUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/IntentActionsUtil.kt">
+IntentActionsUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/KeyboardUtil.kt">
+KeyboardUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/Log.kt">
+Log
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/OnSingleClickListener.kt">
+OnSingleClickListener
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/PermissionUtil.kt">
+PermissionUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/PlaceUtil.kt">
+PlaceUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/RawUtil.kt">
+RawUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/RvGridSpacingItemDecoration.kt">
+RvGridSpacingItemDecoration
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/CacheUtil.kt">
+CacheUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/SPUtil.kt">
+SPUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/ShareUtil.kt">
+ShareUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/ShrinkViewUtil.kt">
+ShrinkViewUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/Snackbar.kt">
+Snackbar
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/Toast.kt">
+Toast
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/UiUtil.kt">
+UiUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/ValidationUtil.kt">
+ValidationUtil
+</a>
+</summary></details>
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/ViewAnimatorUtil.kt">
+ViewAnimatorUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/ViewObserverUtil.kt">
+ViewObserverUtil
+</a>
+</summary></details>
+
+
+<details><summary>
+<a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/WallpaperUtil.kt">
+WallpaperUtil
+</a>
+</summary></details>	
+
+
 
 ## Contributing
 Feel free to contribute code to Utilities. You can do it by forking the repository via Github and sending pull request with changes.
