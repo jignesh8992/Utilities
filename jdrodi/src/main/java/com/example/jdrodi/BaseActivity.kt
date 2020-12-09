@@ -2,6 +2,7 @@ package com.example.jdrodi
 
 import android.app.Activity
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.View
 import androidx.fragment.app.FragmentActivity
 import com.example.jdrodi.utilities.SPUtil
@@ -20,14 +21,7 @@ abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
 
     // variable to track event time
     var mLastClickTime: Long = 0
-    val mMinDuration = 1000
-
-    // Preventing multiple clicks, using threshold of mMinDuration second
-    /* if (SystemClock.elapsedRealtime() - mLastClickTime < mMinDuration) {
-         return
-     }
-     mLastClickTime = SystemClock.elapsedRealtime()*/
-
+    var mMinDuration = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,6 +63,13 @@ abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
      * ToDo. Use this method to initialize action on view components.
      */
     abstract fun initActions()
+
+    override fun onClick(view: View) {
+        if (SystemClock.elapsedRealtime() - mLastClickTime < mMinDuration) {
+            return
+        }
+        mLastClickTime = SystemClock.elapsedRealtime()
+    }
 
 
 }

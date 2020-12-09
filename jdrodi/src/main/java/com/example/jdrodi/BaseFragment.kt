@@ -1,6 +1,7 @@
 package com.example.jdrodi
 
 import android.os.Bundle
+import android.os.SystemClock
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,12 +24,8 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
 
     // variable to track event time
     var mLastClickTime: Long = 0
-    val mMinDuration = 1000
-    // Preventing multiple clicks, using threshold of mMinDuration second
-    /* if (SystemClock.elapsedRealtime() - mLastClickTime < mMinDuration) {
-         return
-     }
-     mLastClickTime = SystemClock.elapsedRealtime()*/
+    var mMinDuration = 1000
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
@@ -67,4 +64,10 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
      */
     abstract fun initActions()
 
+    override fun onClick(view: View) {
+        if (SystemClock.elapsedRealtime() - mLastClickTime < mMinDuration) {
+            return
+        }
+        mLastClickTime = SystemClock.elapsedRealtime()
+    }
 }
