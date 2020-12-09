@@ -7,8 +7,9 @@
     <string name="dialog_no">NO</string>
     <string name="dialog_ok">OK</string>
     <string name="dialog_cancel">CANCEL</string>
-
+    <string name="update_whatsapp">Please install latest update for WhatsApp to begin</string>
     <string name="dialog_confirmation">Are you sure want to delete this status?</string>
+    <string name="no_mail_client">There are no email clients installed.</string>
 
     <!--TODO: Rate dialog-->
     <string name="rate_dialog_message">If you enjoy using this app, would you mind taking a moment to rate it? It won\'t take more than a minute. Thank you for your support!</string>

@@ -23,6 +23,8 @@
     <color name="light_gray">#ffF0F0F0</color>
     <color name="titlebar_bg">#7f000000</color>
 
+    <color name="progress_default_color">#b1000000</color>
+    <color name="progress_grey_color">#449E9E9E</color>
 
 
     <color name="gradient_1_start">#8E2DE2</color>

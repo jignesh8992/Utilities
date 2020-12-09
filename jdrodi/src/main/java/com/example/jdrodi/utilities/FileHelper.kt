@@ -4,8 +4,10 @@ package com.example.jdrodi.utilities
 
 import android.annotation.SuppressLint
 import android.content.ContentUris
+import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
+import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
 import android.os.Environment
@@ -20,6 +22,7 @@ import java.io.FileOutputStream
 import java.io.IOException
 import java.nio.channels.FileChannel
 import java.util.*
+
 
 private val TAG = FileHelper::class.java.simpleName
 
@@ -285,6 +288,31 @@ object FileHelper {
 
     fun Context.createTempUri(): Uri {
         return Uri.fromFile(File(this.cacheDir, "temp"))
+    }
+
+    fun Context.addImageToGallery(filePath: String) {
+        val values = ContentValues()
+        values.put(MediaStore.Images.Media.DATE_TAKEN, System.currentTimeMillis())
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/png")
+        values.put(MediaStore.MediaColumns.DATA, filePath)
+        contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+    }
+
+
+    fun Context.getCameraPhotoOrientation(context: Context?, imagePath: String): Int {
+        var rotate = 90
+        try {
+            val imageFile = File(imagePath)
+            val exif = ExifInterface(imageFile.absolutePath)
+            when (exif.getAttributeInt(ExifInterface.TAG_ORIENTATION, ExifInterface.ORIENTATION_NORMAL)) {
+                ExifInterface.ORIENTATION_ROTATE_270 -> rotate = 270
+                ExifInterface.ORIENTATION_ROTATE_180 -> rotate = 180
+                ExifInterface.ORIENTATION_ROTATE_90 -> rotate = 90
+            }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+        return rotate
     }
 
 }
