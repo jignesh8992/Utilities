@@ -5,10 +5,14 @@ import android.content.Context
 import android.graphics.*
 import android.os.Handler
 import android.util.AttributeSet
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
-import com.example.jdrodi.utilities.getBitmap
+import java.io.InputStream
 import java.util.*
+
+private const val TAG = "DrawingView"
+
 
 class DrawingView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyle: Int = 0) : View(context, attrs, defStyle) {
     // paint
@@ -43,18 +47,34 @@ class DrawingView @JvmOverloads constructor(context: Context, attrs: AttributeSe
         mPaintColor.strokeCap = Paint.Cap.ROUND
         mPaintEraser.set(mPaintColor)
         mPaintEraser.xfermode = PorterDuffXfermode(PorterDuff.Mode.CLEAR)
-        mPaintEraser.maskFilter = BlurMaskFilter(
-            resources.displayMetrics.density * 4,
-            BlurMaskFilter.Blur.NORMAL
-        )
+        mPaintEraser.maskFilter = BlurMaskFilter(resources.displayMetrics.density * 4, BlurMaskFilter.Blur.NORMAL)
         mTouches = ArrayList()
         mUndoTouches = ArrayList()
-        val bitmap = getBitmap(context, "spray/1.png")!!
+        val bitmap = getAssetBitmap(context, "spray/1.png")!!
+
         mSticker = bitmap
         val point = Point()
         point.x = 0
         point.y = 0
         mCurrentSticker = DrawStickers(point, mSticker)
+    }
+
+    private fun getAssetBitmap(mContext: Context, path: String): Bitmap? {
+        var stream: InputStream? = null
+        try {
+            stream = mContext.assets.open(path)
+            return BitmapFactory.decodeStream(stream)
+        } catch (e: Exception) {
+            Log.e(TAG, e.toString())
+        } finally {
+            try {
+                stream?.close()
+            } catch (e: Exception) {
+                Log.e(TAG, e.toString())
+            }
+
+        }
+        return null
     }
 
     fun setColor(color: Int) {

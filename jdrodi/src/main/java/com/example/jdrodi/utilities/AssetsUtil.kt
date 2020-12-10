@@ -67,7 +67,7 @@ fun Context.listOfFiles(path: String): ArrayList<String> {
  * @param path     The path of image
  * @return The bitmap of given path
  */
-fun Context.getAssetBitmap(path: String): Bitmap? {
+fun Context.getAssetBitmap(path: String): Bitmap?{
     var stream: InputStream? = null
     try {
         stream = assets.open(path)
