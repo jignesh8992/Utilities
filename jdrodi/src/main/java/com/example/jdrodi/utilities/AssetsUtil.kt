@@ -87,30 +87,6 @@ fun Context.getAssetBitmap(path: String): Bitmap? {
 
 
 /**
- * Get bitmap from the path
- *
- * @param path     The path of image
- * @return The bitmap of given path
- */
-fun getBitmap(mContext: Context, path: String): Bitmap? {
-    var stream: InputStream? = null
-    try {
-        stream = mContext.assets.open(path)
-        return BitmapFactory.decodeStream(stream)
-    } catch (e: Exception) {
-        Log.e(TAG, e.toString())
-    } finally {
-        try {
-            stream?.close()
-        } catch (e: Exception) {
-            Log.e(TAG, e.toString())
-        }
-
-    }
-    return null
-}
-
-/**
  * Get Drawable from the path
  *
  * @param filePath     The path of image
