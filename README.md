@@ -48,12 +48,12 @@ AssetsUtil
 	</a>: Get the drawable from given assets path
 	</li>
 	<li>
-	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L118" >
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L142" >
 	getAssetsFilePath
 	</a>: Get Assets path from simple path
 	</li>
 	<li>
-	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L118" >
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L153" >
 	getJsonDataFromAsset
 	</a>: Get String from assets path
 	</li>
