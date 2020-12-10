@@ -16,7 +16,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	       implementation 'com.github.jignesh8992:Utilities:v1.1.5'
+	       implementation 'com.github.jignesh8992:Utilities:1.1.7'
 	}
 	
 ### Extensive functions:
@@ -26,13 +26,38 @@ Step 2. Add the dependency
 AssetsUtil
 </a>
 </summary>	
-<ol>
+<ul>
  	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/d6e1bf44dcd93ea91ef20809a59cfe6bad0af011/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L30" >
 	listSize
-	</a>
+	</a>: Get total size of files of given assets directory
 	</li>
-</ol>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L48" >
+	listOfFiles
+	</a>: Get total files of given assets directory
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L70" >
+	getAssetBitmap
+	</a>: Get the bitmap from given assets path
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L95" >
+	getDrawable
+	</a>: Get the drawable from given assets path
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L118" >
+	getAssetsFilePath
+	</a>: Get Assets path from simple path
+	</li>
+	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L118" >
+	getJsonDataFromAsset
+	</a>: Get String from assets path
+	</li>
+</ul>
 </details>
 
 
