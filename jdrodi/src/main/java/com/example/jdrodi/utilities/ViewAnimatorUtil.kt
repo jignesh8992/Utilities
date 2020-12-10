@@ -19,7 +19,7 @@ import android.view.ViewGroup
  *
  * @view The view to be slide up
  */
-fun View.slideUp(view: View) {
+fun slideUp(view: View) {
     view.visibility = View.VISIBLE
     val layoutParams = view.layoutParams
     layoutParams.height = 1
