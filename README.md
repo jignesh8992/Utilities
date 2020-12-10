@@ -30,12 +30,12 @@ AssetsUtil
  	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/d6e1bf44dcd93ea91ef20809a59cfe6bad0af011/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L30" >
 	listSize
-	</a>: Get total size of files of given assets directory
+	</a>: Get thetotal size of files of given assets directory
 	</li>
 	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L48" >
 	listOfFiles
-	</a>: Get total files of given assets directory
+	</a>: Get the total files of given assets directory
 	</li>
 	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L70" >
@@ -50,12 +50,12 @@ AssetsUtil
 	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L142" >
 	getAssetsFilePath
-	</a>: Get Assets path from simple path
+	</a>: Get the assets path from simple path
 	</li>
 	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L153" >
 	getJsonDataFromAsset
-	</a>: Get String from assets path
+	</a>: Get the string from assets path
 	</li>
 </ul>
 </details>
@@ -66,7 +66,16 @@ AssetsUtil
 <a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/BatteryUtil.kt">
 BatteryUtil
 </a>
-</summary></details>
+</summary>
+<ul>
+ 	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/1662a6f1bc030dda8c18d0e55656b2958c55ce5b/jdrodi/src/main/java/com/example/jdrodi/utilities/BatteryUtil.kt#L14" >
+	getBatteryPercentage
+	</a>: Get the battery percentage level
+	</li>
+</ul>
+
+</details>
 
 <details><summary>
 <a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/BitmapUtil.kt">
