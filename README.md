@@ -360,7 +360,7 @@ When submitting code, please make every effort to follow existing conventions an
        style="max-width:100%;">
   </a>
   
-## LICENSE
+## License
 
 
 Copyright [2020] [Jignesh N Patel](https://github.com/jignesh8992)
