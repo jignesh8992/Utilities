@@ -30,12 +30,12 @@ AssetsUtil
  	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/d6e1bf44dcd93ea91ef20809a59cfe6bad0af011/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L30" >
 	listSize
-	</a>: Get total size of files of given assets directory
+	</a>: Get thetotal size of files of given assets directory
 	</li>
 	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L48" >
 	listOfFiles
-	</a>: Get total files of given assets directory
+	</a>: Get the total files of given assets directory
 	</li>
 	<li>
 	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L70" >
@@ -48,14 +48,14 @@ AssetsUtil
 	</a>: Get the drawable from given assets path
 	</li>
 	<li>
-	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L118" >
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L142" >
 	getAssetsFilePath
-	</a>: Get Assets path from simple path
+	</a>: Get the assets path from simple path
 	</li>
 	<li>
-	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L118" >
+	<a href="https://github.com/jignesh8992/Utilities/blob/b56edc1d34957932df2fa996e763788649f1a5bb/jdrodi/src/main/java/com/example/jdrodi/utilities/AssetsUtil.kt#L153" >
 	getJsonDataFromAsset
-	</a>: Get String from assets path
+	</a>: Get the string from assets path
 	</li>
 </ul>
 </details>
@@ -66,7 +66,16 @@ AssetsUtil
 <a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/BatteryUtil.kt">
 BatteryUtil
 </a>
-</summary></details>
+</summary>
+<ul>
+ 	<li>
+	<a href="https://github.com/jignesh8992/Utilities/blob/1662a6f1bc030dda8c18d0e55656b2958c55ce5b/jdrodi/src/main/java/com/example/jdrodi/utilities/BatteryUtil.kt#L14" >
+	getBatteryPercentage
+	</a>: Get the battery percentage level
+	</li>
+</ul>
+
+</details>
 
 <details><summary>
 <a href="https://github.com/jignesh8992/Utilities/blob/master/jdrodi/src/main/java/com/example/jdrodi/utilities/BitmapUtil.kt">
@@ -350,3 +359,20 @@ When submitting code, please make every effort to follow existing conventions an
        src="https://github.com/jignesh8992/Battery-Information/blob/master/social/facebook.png" 
        style="max-width:100%;">
   </a>
+  
+## License
+
+
+Copyright [2020] [Jignesh N Patel](https://github.com/jignesh8992)
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
