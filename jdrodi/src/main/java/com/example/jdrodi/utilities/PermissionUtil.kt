@@ -76,7 +76,7 @@ fun Context.showPermissionsAlert(fontPath: String) {
     val message = getString(R.string.permission_msg)
     val positiveText = getString(R.string.permission_goto)
     val negativeText = getString(android.R.string.cancel)
-    showAlert(title, message, fontPath, positiveText, negativeText, object : OnPositive {
+    showAlert(title, message, positiveText, negativeText, fontPath, object : OnPositive {
         override fun onYes() {
             openSettings()
         }
@@ -94,7 +94,7 @@ fun Context.showPermissionsAlert(permission_msg: String, fontPath: String) {
     val title = getString(R.string.permission_required)
     val positiveText = getString(R.string.permission_goto)
     val negativeText = getString(android.R.string.cancel)
-    showAlert(title, permission_msg, fontPath, positiveText, negativeText, object : OnPositive {
+    showAlert(title, permission_msg, positiveText, negativeText, fontPath, object : OnPositive {
         override fun onYes() {
             openSettings()
         }

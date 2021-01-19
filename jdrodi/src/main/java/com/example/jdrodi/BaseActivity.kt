@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.SystemClock
 import android.view.View
 import androidx.fragment.app.FragmentActivity
+import com.example.jdrodi.jprogress.JProgress
 import com.example.jdrodi.utilities.SPUtil
 
 
@@ -18,6 +19,7 @@ abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
 
     lateinit var mContext: Activity // Context of the current activity
     lateinit var sp: SPUtil // Obj. of SharedPreference
+    private var jpDialog: JProgress? = null
 
     // variable to track event time
     var mLastClickTime: Long = 0
@@ -27,6 +29,7 @@ abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         mContext = getContext()
         sp = SPUtil(mContext)
+        jpDialog = JProgress.create(mContext, JProgress.Style.SPIN_INDETERMINATE)
     }
 
     override fun setContentView(layout: Int) {
@@ -69,6 +72,14 @@ abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
             return
         }
         mLastClickTime = SystemClock.elapsedRealtime()
+    }
+
+    fun jpShow() {
+        jpDialog?.show()
+    }
+
+    fun jpDismiss() {
+        jpDialog?.dismiss()
     }
 
 
