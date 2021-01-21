@@ -45,4 +45,8 @@ dependencies {
     // Calligraphy for App level font style change
     implementation 'io.github.inflationx:calligraphy3:3.1.1'
     implementation 'io.github.inflationx:viewpump:2.0.3'
+
+    // Keyboard visibility listener sdk
+    implementation 'net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:1.0.1'
+
 }

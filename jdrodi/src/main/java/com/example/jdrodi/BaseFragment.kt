@@ -52,7 +52,7 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
     /**
      * ToDo. Use this method to setup ads.
      */
-    abstract fun initAds()
+    open fun initAds() {}
 
     /**
      * ToDo. Use this method to initialize data to view components.
