@@ -1,5 +1,6 @@
 # Utilities
  [![](https://jitpack.io/v/jignesh8992/Utilities.svg)](https://jitpack.io/#jignesh8992/Utilities)
+ <img src="https://badges.frapsoft.com/os/v1/open-source.svg?v=103">
  
  Utility functions to perform dynamic operations on Android.  
 
