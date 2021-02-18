@@ -71,7 +71,7 @@ fun Context.hasPermission(permissions: Array<String>): Boolean {
  *
  * @param fontPath The path of font style to change typeface
  */
-fun Context.showPermissionsAlert(fontPath: String) {
+fun Context.showPermissionsAlert(fontPath: String? = null) {
     val title = getString(R.string.permission_required)
     val message = getString(R.string.permission_msg)
     val positiveText = getString(R.string.permission_goto)
