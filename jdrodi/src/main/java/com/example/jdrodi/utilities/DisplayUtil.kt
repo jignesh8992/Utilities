@@ -3,6 +3,7 @@
 package com.example.jdrodi.utilities
 
 import android.app.Activity
+import android.content.Context
 import android.util.DisplayMetrics
 import android.util.TypedValue
 import kotlin.math.roundToInt
@@ -25,7 +26,7 @@ fun Activity.hideStatusBar() {
  *
  * @return The Pixel
  */
-fun Activity.dpToPx(dp: Int): Int {
+fun Context.dpToPx(dp: Int): Int {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp.toFloat(), resources.displayMetrics).roundToInt()
 }
 
@@ -34,7 +35,7 @@ fun Activity.dpToPx(dp: Int): Int {
  *
  * @return The Pixel
  */
-fun Activity.spToPx(sp: Int): Int {
+fun Context.spToPx(sp: Int): Int {
     return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, sp.toFloat(), resources.displayMetrics).roundToInt()
 }
 
@@ -43,7 +44,7 @@ fun Activity.spToPx(sp: Int): Int {
  *
  * @return The SP
  */
-fun Activity.dpToSp(dp: Int): Int {
+fun Context.dpToSp(dp: Int): Int {
     return (dpToPx(dp) / resources.displayMetrics.scaledDensity).roundToInt()
 }
 
