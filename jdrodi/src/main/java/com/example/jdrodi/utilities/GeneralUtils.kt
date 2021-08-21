@@ -8,6 +8,7 @@ import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.net.NetworkInfo
 import android.os.Build
+import android.provider.Settings
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -135,5 +136,14 @@ fun Context.changeTabsFont(tabs: TabLayout, fontPath: String) {
             }
         }
     }
+}
+
+
+
+fun String.addCharAtIndex(char: Char, index: Int) = StringBuilder(this).apply { insert(index, char) }.toString()
+
+
+fun Context.getDeviceId(): String? {
+    return Settings.Secure.getString(contentResolver, "android_id")
 }
 

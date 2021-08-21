@@ -130,5 +130,19 @@
     <string name="label_get_code">Get verification code</string>
     <string name="label_reset">Reset</string>
     <string name="label_please_wait">Please wait…</string>
+    <string name="waapp_not_installed">WhatsApp have not been installed</string>
+    <string name="error_pdf">Error while generating PDF, Please try again.</string>
+    <string name="choose_app">Choose an app</string>
+
+
+    <string name="invalid_date_max">Invalid Date Max Date</string>
+    <string name="invalid_date_min">Invalid Date Min Date</string>
+    <string name="invalid_day">Invalid Day</string>
+    <string name="invalid_day_of_month">Invalid Day Of Month</string>
+    <string name="invalid_day_of_month_leap_year">Invalid day Of Month For Leap Year</string>
+    <string name="invalid_month">Invalid Month</string>
+
+    <string name="expand_string">More</string>
+    <string name="collapsed_string">Less</string>
 
 </resources>

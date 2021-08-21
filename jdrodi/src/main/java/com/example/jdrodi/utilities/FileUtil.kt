@@ -6,7 +6,9 @@ import android.annotation.SuppressLint
 import android.content.ContentUris
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
+import android.graphics.Bitmap
 import android.media.ExifInterface
 import android.net.Uri
 import android.os.Build
@@ -16,11 +18,9 @@ import android.provider.MediaStore
 import android.text.TextUtils
 import android.util.Log
 import androidx.annotation.NonNull
-import java.io.File
-import java.io.FileInputStream
-import java.io.FileOutputStream
-import java.io.IOException
+import java.io.*
 import java.nio.channels.FileChannel
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -33,6 +33,10 @@ private val TAG = FileHelper::class.java.simpleName
  */
 
 object FileHelper {
+
+    private const val DEFAULT_BUFFER_SIZE = 4096
+    private const val EOF = -1
+    private const val TAG = "FileUtil"
 
     /**
      *  Return file size in B, KB, MB, GB format
@@ -313,6 +317,113 @@ object FileHelper {
             e.printStackTrace()
         }
         return rotate
+    }
+
+
+    fun getFolderName(str: String?): String {
+        val file = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), str)
+        return if (file.exists() || file.mkdirs()) {
+            file.absolutePath
+        } else ""
+    }
+
+    fun isSDAvailable(): Boolean {
+        return Environment.getExternalStorageState() == "mounted"
+    }
+
+    fun getNewFile(context: Context, str: String?): File? {
+        val str2: String
+        val format = SimpleDateFormat("" + System.currentTimeMillis(), Locale.CHINA).format(Date())
+        str2 = if (isSDAvailable()) {
+            getFolderName(str) + File.separator + format + ".jpg"
+        } else {
+            context.filesDir.path + File.separator + format + ".jpg"
+        }
+        return if (TextUtils.isEmpty(str2)) {
+            null
+        } else File(str2)
+    }
+
+    fun getNewFilePng(context: Context, str: String?): File? {
+        val str2: String
+        val format = SimpleDateFormat("yyyyMMdd_HHmmss", Locale.CHINA).format(Date())
+        str2 = if (isSDAvailable()) {
+            getFolderName(str) + File.separator + format + ".png"
+        } else {
+            context.filesDir.path + File.separator + format + ".png"
+        }
+        return if (TextUtils.isEmpty(str2)) {
+            null
+        } else File(str2)
+    }
+
+    fun saveImageToGallery(file: File, bitmap: Bitmap, bool: Boolean): File? {
+        try {
+            Log.e(TAG, "File: $file")
+            val fileOutputStream = FileOutputStream(file)
+            Log.e(TAG, " isCompress =  $bool")
+            if (!bool) {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream)
+            } else {
+                bitmap.compress(Bitmap.CompressFormat.JPEG, 20, fileOutputStream)
+            }
+            fileOutputStream.flush()
+            fileOutputStream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Log.e(TAG, "saveImageToGallery:  $e")
+        }
+        Log.e(TAG, "saveImageToGallery: the path of bmp is.. " + file.absolutePath + "  " + bool)
+        return file
+    }
+
+    fun saveImageToGalleryPng(file: File, bitmap: Bitmap): File? {
+        try {
+            val fileOutputStream = FileOutputStream(file)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, fileOutputStream)
+            fileOutputStream.flush()
+            fileOutputStream.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
+        Log.e(TAG, "saveImageToGallery: the path of bmp is.. " + file.absolutePath)
+        return file
+    }
+
+    fun notifySystemGallery(context: Context, file: File) {
+        if (file.exists()) {
+            context.sendBroadcast(Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE", Uri.fromFile(file)))
+            return
+        }
+        throw java.lang.IllegalArgumentException("bmp should not be null")
+    }
+
+
+    private fun rename(file: File, str: String): File? {
+        val file2 = File(file.parent, str)
+        if (file2 != file) {
+            if (file2.exists() && file2.delete()) {
+                Log.d(TAG, "Delete old $str file")
+            }
+            if (file.renameTo(file2)) {
+                Log.d(TAG, "Rename file to $str")
+            }
+        }
+        return file2
+    }
+
+    @Throws(IOException::class)
+    private fun copy(inputStream: InputStream, outputStream: OutputStream): Long {
+        val bArr = ByteArray(4096)
+        var j: Long = 0
+        while (true) {
+            val read = inputStream.read(bArr)
+            if (-1 == read) {
+                return j
+            }
+            outputStream.write(bArr, 0, read)
+            j += read.toLong()
+        }
     }
 
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DateEditText">
+        <attr format="enum" name="dividerCharacter">
+            <enum name="slash" value="0"/>
+            <enum name="minus" value="1"/>
+        </attr>
+
+
+        <attr format="enum" name="dateFormat">
+            <enum name="ddMMyyyy" value="0"/>
+            <enum name="MMyy" value="1"/>
+        </attr>
+
+        <attr format="string" name="maxDate"/>
+        <attr format="string" name="minDate"/>
+        <attr format="boolean" name="autoCorrect"/>
+        <attr format="boolean" name="helperTextEnabled"/>
+        <attr format="color" name="helperTextHighlightedColor"/>
+
+    </declare-styleable>
+
+
+    <declare-styleable name="ExpandableTextView">
+        <attr name="maxCollapsedLines" format="integer"/>
+        <attr name="animDuration" format="integer"/>
+        <attr name="contentTextSize" format="dimension"/>
+        <attr name="contentTextColor" format="color"/>
+        <attr name="contentLineSpacingMultiplier" format="float"/>
+        <attr name="expandDrawable" format="reference"/>
+        <attr name="expandText" format="string"/>
+        <attr name="collapseDrawable" format="reference"/>
+        <attr name="collapseText" format="string"/>
+        <attr name="expandCollapseTextColor" format="color"/>
+        <attr name="expandCollapseTextSize" format="dimension"/>
+        <attr name="DrawableAndTextGravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+    </declare-styleable>
+
+</resources>
