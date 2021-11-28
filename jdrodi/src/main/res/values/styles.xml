@@ -21,4 +21,14 @@
         <item name="android:gravity">center_horizontal|center_vertical</item>
     </style>
 
+    <style name="VideoView.Widget.ProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/progress_rotate</item>
+        <item name="android:indeterminateDuration">1000</item>
+    </style>
+
+    <style name="Universal.Widget.ProgressBar" parent="@android:style/Widget.ProgressBar">
+        <item name="android:indeterminateDrawable">@drawable/uvv_progress_rotate</item>
+        <item name="android:indeterminateDuration">1000</item>
+    </style>
+
 </resources>

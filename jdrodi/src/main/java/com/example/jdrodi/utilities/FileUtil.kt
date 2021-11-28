@@ -22,6 +22,8 @@ import java.io.*
 import java.nio.channels.FileChannel
 import java.text.SimpleDateFormat
 import java.util.*
+import android.media.MediaScannerConnection
+import android.media.MediaScannerConnection.OnScanCompletedListener
 
 
 private val TAG = FileHelper::class.java.simpleName
@@ -63,6 +65,17 @@ object FileHelper {
     fun isExtension(path: String, extension: String): Boolean {
         val currExtension = path.substring(path.lastIndexOf(".") + 1, path.length)
         return extension.equals(currExtension, ignoreCase = true)
+    }
+
+
+    /**
+     * ToDo.. Get name of file
+     *
+     * @param path The path
+     * @return The name of path
+     */
+    fun getFileName(path: String): String? {
+        return path.substring(path.lastIndexOf("/") + 1)
     }
 
 
@@ -426,4 +439,17 @@ object FileHelper {
         }
     }
 
+    fun refreshGallery(mContext: Context, path: String) {
+        MediaScannerConnection.scanFile(mContext, arrayOf(path), null) { path, uri -> Log.i("8992", "Scanned $path") }
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            val mediaScanIntent = Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE)
+            val contentUri = Uri.parse(path) //out is your file you
+            // saved/deleted/moved/copied
+            mediaScanIntent.data = contentUri
+            mContext.sendBroadcast(mediaScanIntent)
+        } else {
+            mContext.sendBroadcast(Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory())))
+        }
+        mContext.sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(File(path))))
+    }
 }

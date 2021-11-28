@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/drawable/progress_rotate.xml" value="0.3333333333333333" />
         <entry key="..\:/Github/Utilities/jdrodi/src/main/res/drawable/search_cursor.xml" value="0.33697916666666666" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/drawable/uvv_progress_rotate.xml" value="0.3333333333333333" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/drawable/uvv_star_play_progress_seek.xml" value="0.3333333333333333" />
         <entry key="..\:/Github/Utilities/jdrodi/src/main/res/layout/expandabletextview.xml" value="0.31666666666666665" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/layout/layout_error.xml" value="0.31302083333333336" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/layout/layout_loading.xml" value="0.31302083333333336" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/layout/uvv_on_error_layout.xml" value="0.31302083333333336" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/layout/uvv_on_loading_layout.xml" value="0.31302083333333336" />
+        <entry key="..\:/Github/Utilities/jdrodi/src/main/res/layout/uvv_player_controller.xml" value="0.31302083333333336" />
       </map>
     </option>
   </component>
