@@ -20,7 +20,6 @@ import android.view.View
 import android.view.Window
 import androidx.core.view.drawToBitmap
 import com.example.jdrodi.R
-import com.example.jdrodi.utilities.FileHelper.createTempUri
 import java.io.*
 import java.util.*
 import kotlin.math.abs
@@ -360,6 +359,7 @@ private fun calculateInSampleSize(options: BitmapFactory.Options, reqWidth: Int,
     }
     return inSampleSize
 }
+
 
 fun decodeSampledBitmapFromResource(res: Resources?, resId: Int, reqWidth: Int, reqHeight: Int): Bitmap? {
 

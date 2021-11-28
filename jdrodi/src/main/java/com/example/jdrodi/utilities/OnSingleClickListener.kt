@@ -16,13 +16,13 @@ abstract class OnSingleClickListener : View.OnClickListener {
 
     private var mLastClickTime: Long = 0
 
-    abstract fun onSingleClick(v: View?)
+    abstract fun onSingleClick(view: View)
 
-    override fun onClick(v: View) {
+    override fun onClick(view: View) {
         val elapsedTime = SystemClock.uptimeMillis() - mLastClickTime
         mLastClickTime = SystemClock.uptimeMillis()
         if (elapsedTime <= MIN_CLICK_INTERVAL) return
-        onSingleClick(v)
+        onSingleClick(view)
     }
 
     companion object {

@@ -1,154 +1,94 @@
-package com.example.jdrodi.utilities;
+package com.example.jdrodi.utilities
 
-import android.os.Build;
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.io.File
+import java.util.*
 
-import androidx.annotation.RequiresApi;
+object SortHelper
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun compareDate(file1: File, file2: File): Int {
+    val lastModified1 = file1.lastModified()
+    val lastModified2 = file2.lastModified()
+    return lastModified2.compareTo(lastModified1)
+}
 
-
-public class SortHelper {
-
-
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public static int compareDate(File file1, File file2) {
-        long lastModified1 = file1.lastModified();
-        long lastModified2 = file2.lastModified();
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            return Long.compare(lastModified2, lastModified1);
-        } else {
-            return Long.compare(lastModified2, lastModified1);
-
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun sortVideos(list: ArrayList<File>): ArrayList<String> {
+    val sortedList = ArrayList<String>()
+    list.sortWith(Comparator { object1, object2 -> compareDate(object1, object2) })
+    for (i in list.indices) {
+        val path = list[i].path
+        when (getFileType(File(path))) {
+            FileType.VIDEO -> sortedList.add(path)
         }
     }
+    return sortedList
+}
 
-
-    public static ArrayList<String> sortVideos(ArrayList<File> list) {
-
-        ArrayList<String> sortedList = new ArrayList<>();
-        Collections.sort(list, new Comparator<File>() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public int compare(File object1, File object2) {
-                return SortHelper.compareDate(object1, object2);
-            }
-        });
-
-        for (int i = 0; i < list.size(); i++) {
-            String path = list.get(i).getPath();
-            switch (FileFormatHelper.FileType.getFileType(new File(path))) {
-                case VIDEO:
-                    sortedList.add(path);
-                    break;
-            }
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun sortPhotos(list: ArrayList<File>): ArrayList<String> {
+    val sortedList = ArrayList<String>()
+    list.sortWith { object1, object2 -> compareDate(object1, object2) }
+    for (i in list.indices) {
+        val path = list[i].path
+        when (getFileType(File(path))) {
+            FileType.IMAGE -> sortedList.add(path)
         }
-        return sortedList;
     }
+    return sortedList
+}
 
-    public static ArrayList<String> sortPhotos(ArrayList<File> list) {
-        ArrayList<String> sortedList = new ArrayList<>();
-        Collections.sort(list, new Comparator<File>() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public int compare(File object1, File object2) {
-                return SortHelper.compareDate(object1, object2);
-            }
-        });
-        for (int i = 0; i < list.size(); i++) {
-            String path = list.get(i).getPath();
-            switch (FileFormatHelper.FileType.getFileType(new File(path))) {
-                case IMAGE:
-                    sortedList.add(path);
-                    break;
-            }
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun sortPhotos2(list: ArrayList<String>): ArrayList<String> {
+    val sortedList = ArrayList<String>()
+    list.sortWith { object1, object2 -> compareDate(File(object1), File(object2)) }
+    for (i in list.indices) {
+        val path = list[i]
+        when (getFileType(File(path))) {
+            FileType.IMAGE -> sortedList.add(path)
         }
-        return sortedList;
     }
+    return sortedList
+}
 
-    public static ArrayList<String> sortPhotos2(ArrayList<String> list) {
-        ArrayList<String> sortedList = new ArrayList<>();
-        /*Collections.sort(list, new Comparator<File>() {
-            @Override
-            public int compare(File object1, File object2) {
-                return SortHelper.compareDate(object1, object2);
-            }
-        });*/
-        for (int i = 0; i < list.size(); i++) {
-            String path = list.get(i);
-            switch (FileFormatHelper.FileType.getFileType(new File(path))) {
-                case IMAGE:
-                    sortedList.add(path);
-                    break;
-            }
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun sortVideos2(list: ArrayList<String>): ArrayList<String> {
+    val sortedList = ArrayList<String>()
+    list.sortWith { object1, object2 -> compareDate(File(object1), File(object2)) }
+    for (i in list.indices) {
+        val path = list[i]
+        when (getFileType(File(path))) {
+            FileType.VIDEO -> sortedList.add(path)
         }
-        return sortedList;
     }
+    return sortedList
+}
 
-    public static ArrayList<String> sortVideos2(ArrayList<String> list) {
-        ArrayList<String> sortedList = new ArrayList<>();
-        /*Collections.sort(list, new Comparator<File>() {
-            @Override
-            public int compare(File object1, File object2) {
-                return SortHelper.compareDate(object1, object2);
-            }
-        });*/
-        for (int i = 0; i < list.size(); i++) {
-            String path = list.get(i);
-            switch (FileFormatHelper.FileType.getFileType(new File(path))) {
-                case VIDEO:
-                    sortedList.add(path);
-                    break;
-            }
-        }
-        return sortedList;
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun loadLatest(list: ArrayList<File>): ArrayList<String> {
+    val sortedList = ArrayList<String>()
+    list.sortWith { object1, object2 -> compareDate(object1, object2) }
+    var length = 6
+    if (list.size < 6) {
+        length = list.size
     }
-
-
-    public static ArrayList<String> loadLatest(ArrayList<File> list) {
-
-        ArrayList<String> sortedList = new ArrayList<>();
-        Collections.sort(list, new Comparator<File>() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public int compare(File object1, File object2) {
-                return SortHelper.compareDate(object1, object2);
-            }
-        });
-
-        int length = 6;
-        if (list.size() < 6) {
-            length = list.size();
+    for (i in 0 until length) {
+        val path = list[i].path
+        when (getFileType(File(path))) {
+            FileType.IMAGE, FileType.VIDEO -> sortedList.add(path)
         }
-
-        for (int i = 0; i < length; i++) {
-            String path = list.get(i).getPath();
-            switch (FileFormatHelper.FileType.getFileType(new File(path))) {
-                case IMAGE:
-                    sortedList.add(path);
-                    break;
-                case VIDEO:
-                    sortedList.add(path);
-                    break;
-            }
-        }
-        return sortedList;
     }
+    return sortedList
+}
 
-    public static ArrayList<String> sort(ArrayList<File> list) {
-        ArrayList<String> sortedList = new ArrayList<>();
-        Collections.sort(list, new Comparator<File>() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public int compare(File object1, File object2) {
-                return SortHelper.compareDate(object1, object2);
-            }
-        });
-        for (int i = 0; i < list.size(); i++) {
-            sortedList.add(list.get(i).getPath());
-        }
-        return sortedList;
+@RequiresApi(api = Build.VERSION_CODES.KITKAT)
+fun sort(list: ArrayList<File>): ArrayList<String> {
+    val sortedList = ArrayList<String>()
+    list.sortWith { object1, object2 -> compareDate(object1, object2) }
+    for (i in list.indices) {
+        sortedList.add(list[i].path)
     }
+    return sortedList
 }

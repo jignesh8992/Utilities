@@ -13,328 +13,289 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package com.example.jdrodi.utilities
 
-package com.example.jdrodi.utilities;
-
-
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.util.Patterns;
-
-import org.jetbrains.annotations.NotNull;
-
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.Set;
-
+import com.example.jdrodi.utilities.EmailIntentBuilder
+import android.content.Intent
+import android.content.ActivityNotFoundException
+import android.app.Activity
+import android.content.Context
+import android.net.Uri
+import android.util.Patterns
+import java.lang.StringBuilder
+import java.util.LinkedHashSet
 
 /**
- * A helper to create email intents, i.e. {@link Intent#ACTION_SENDTO} with a {@code mailto:} URI.
+ * A helper to create email intents, i.e. [Intent.ACTION_SENDTO] with a `mailto:` URI.
  *
- * <p>Example usage:</p>
+ *
+ * Example usage:
  * <pre>
- * <code>
+ * `
  * EmailIntentBuilder.from(activity)
- *         .to("alice@example.org")
- *         .subject("Bug report for 'My awesome app'")
- *         .body("Something went wrong :(")
- *         .start();
- * </code>
- * </pre>
- * <p>This creates an intent containing the following {@code mailto:} URI:</p>
- * <pre>
- * <code>
- * mailto:alice@example.org?subject=Bug%20report%20for%20'My%20awesome%20app'&amp;body=Something%20went%20wrong%20%3A(
- * </code>
- * </pre>
+ * .to("alice@example.org")
+ * .subject("Bug report for 'My awesome app'")
+ * .body("Something went wrong :(")
+ * .start();
+` *
+</pre> *
  *
- * @see #from(Context)
+ * This creates an intent containing the following `mailto:` URI:
+ * <pre>
+ * `
+ * mailto:alice@example.org?subject=Bug%20report%20for%20'My%20awesome%20app'&body=Something%20went%20wrong%20%3A(
+` *
+</pre> *
+ *
+ * @see .from
  */
-@SuppressWarnings("WeakerAccess")
-public final class EmailIntentBuilder {
-    private final Context context;
-    private final Set<String> to = new LinkedHashSet<>();
-    private final Set<String> cc = new LinkedHashSet<>();
-    private final Set<String> bcc = new LinkedHashSet<>();
-    private String subject;
-    private String body;
+class EmailIntentBuilder private constructor(val context: Context) {
 
-
-    private EmailIntentBuilder(@NotNull Context context) {
-        this.context = checkNotNull(context);
-    }
-
-    /**
-     * Create a builder to create an {@link Intent#ACTION_SENDTO} intent or to launch that intent.
-     *
-     * @param context
-     *         The {@code Context} that will be used to launch the intent
-     *
-     * @return An email intent builder
-     */
-    @NotNull
-    public static EmailIntentBuilder from(@NotNull Context context) {
-        return new EmailIntentBuilder(context);
-    }
+    private val to: MutableSet<String> = LinkedHashSet()
+    private val cc: MutableSet<String> = LinkedHashSet()
+    private val bcc: MutableSet<String> = LinkedHashSet()
+    private var subject: String? = null
+    private var body: String? = null
 
     /**
      * Add an email address to be used in the "to" field.
      *
      * @param to
-     *         the email address to add
+     * the email address to add
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder to(@NotNull String to) {
-        checkEmail(to);
-        this.to.add(to);
-        return this;
+    fun to(to: String): EmailIntentBuilder {
+        checkEmail(to)
+        this.to.add(to)
+        return this
     }
 
     /**
      * Add a list of email addresses to be used in the "to" field.
      *
      * @param to
-     *         the email addresses to add
+     * the email addresses to add
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder to(@NotNull Collection<String> to) {
-        checkNotNull(to);
-        for (String email : to) {
-            checkEmail(email);
+    fun to(to: Collection<String>): EmailIntentBuilder {
+        checkNotNull(to)
+        for (email in to) {
+            checkEmail(email)
         }
-        this.to.addAll(to);
-
-        return this;
+        this.to.addAll(to)
+        return this
     }
 
     /**
      * Add an email address to be used in the "cc" field.
      *
      * @param cc
-     *         the email address to add
+     * the email address to add
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder cc(@NotNull String cc) {
-        checkEmail(cc);
-        this.cc.add(cc);
-        return this;
+    fun cc(cc: String): EmailIntentBuilder {
+        checkEmail(cc)
+        this.cc.add(cc)
+        return this
     }
 
     /**
      * Add an email address to be used in the "cc" field.
      *
      * @param cc
-     *         the email addresses to add
+     * the email addresses to add
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder cc(@NotNull Collection<String> cc) {
-        checkNotNull(cc);
-        for (String email : cc) {
-            checkEmail(email);
+    fun cc(cc: Collection<String>): EmailIntentBuilder {
+        checkNotNull(cc)
+        for (email in cc) {
+            checkEmail(email)
         }
-        this.cc.addAll(cc);
-
-        return this;
+        this.cc.addAll(cc)
+        return this
     }
 
     /**
      * Add an email address to be used in the "bcc" field.
      *
      * @param bcc
-     *         the email address to add
+     * the email address to add
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder bcc(@NotNull String bcc) {
-        checkEmail(bcc);
-        this.bcc.add(bcc);
-        return this;
+    fun bcc(bcc: String): EmailIntentBuilder {
+        checkEmail(bcc)
+        this.bcc.add(bcc)
+        return this
     }
 
     /**
      * Add an email address to be used in the "bcc" field.
      *
      * @param bcc
-     *         the email addresses to add
+     * the email addresses to add
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder bcc(@NotNull Collection<String> bcc) {
-        checkNotNull(bcc);
-        for (String email : bcc) {
-            checkEmail(email);
+    fun bcc(bcc: Collection<String>): EmailIntentBuilder {
+        checkNotNull(bcc)
+        for (email in bcc) {
+            checkEmail(email)
         }
-        this.bcc.addAll(bcc);
-
-        return this;
+        this.bcc.addAll(bcc)
+        return this
     }
 
     /**
      * Set the subject line for this email intent.
      *
      * @param subject
-     *         the email subject line
+     * the email subject line
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder subject(@NotNull String subject) {
-        checkNotNull(subject);
-        checkNoLineBreaks(subject);
-        this.subject = subject;
-        return this;
+    fun subject(subject: String): EmailIntentBuilder {
+        checkNotNull(subject)
+        checkNoLineBreaks(subject)
+        this.subject = subject
+        return this
     }
 
     /**
      * Set the text body for this email intent.
      *
      * @param body
-     *         the text body
+     * the text body
      *
-     * @return This {@code EmailIntentBuilder} for method chaining
+     * @return This `EmailIntentBuilder` for method chaining
      */
-    @NotNull
-    public EmailIntentBuilder body(@NotNull String body) {
-        checkNotNull(body);
-        this.body = fixLineBreaks(body);
-        return this;
+    fun body(body: String): EmailIntentBuilder {
+        checkNotNull(body)
+        this.body = fixLineBreaks(body)
+        return this
     }
 
     /**
      * Launch the email intent.
      *
-     * @return {@code false} if no activity to handle the email intent could be found; {@code true} otherwise
+     * @return `false` if no activity to handle the email intent could be found; `true` otherwise
      */
-    public boolean start() {
-        Intent emailIntent = build();
+    fun start(): Boolean {
+        val emailIntent = build()
         try {
-            startActivity(emailIntent);
-        } catch (ActivityNotFoundException e) {
-            return false;
+            startActivity(emailIntent)
+        } catch (e: ActivityNotFoundException) {
+            return false
         }
-
-        return true;
+        return true
     }
 
-    private void startActivity(Intent intent) {
-        if (!(context instanceof Activity)) {
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    private fun startActivity(intent: Intent) {
+        if (context !is Activity) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }
-
-        context.startActivity(intent);
+        context.startActivity(intent)
     }
 
     /**
-     * Build the {@link Intent#ACTION_SENDTO} intent.
+     * Build the [Intent.ACTION_SENDTO] intent.
      *
      * @return the intent containing the provided information
      */
-    @NotNull
-    public Intent build() {
-        Uri mailtoUri = constructMailtoUri();
-        return new Intent(Intent.ACTION_SENDTO, mailtoUri);
+    fun build(): Intent {
+        val mailtoUri = constructMailtoUri()
+        return Intent(Intent.ACTION_SENDTO, mailtoUri)
     }
 
-    @NotNull
-    private Uri constructMailtoUri() {
-        StringBuilder mailto = new StringBuilder(1024);
-        mailto.append("mailto:");
-        addRecipients(mailto, to);
-
-        boolean hasQueryParameters;
-        hasQueryParameters = addRecipientQueryParameters(mailto, "cc", cc, false);
-        hasQueryParameters = addRecipientQueryParameters(mailto, "bcc", bcc, hasQueryParameters);
-        hasQueryParameters = addQueryParameter(mailto, "subject", subject, hasQueryParameters);
-        addQueryParameter(mailto, "body", body, hasQueryParameters);
-
-        return Uri.parse(mailto.toString());
+    private fun constructMailtoUri(): Uri {
+        val mailto = StringBuilder(1024)
+        mailto.append("mailto:")
+        addRecipients(mailto, to)
+        var hasQueryParameters: Boolean
+        hasQueryParameters = addRecipientQueryParameters(mailto, "cc", cc, false)
+        hasQueryParameters = addRecipientQueryParameters(mailto, "bcc", bcc, hasQueryParameters)
+        hasQueryParameters = addQueryParameter(mailto, "subject", subject, hasQueryParameters)
+        addQueryParameter(mailto, "body", body, hasQueryParameters)
+        return Uri.parse(mailto.toString())
     }
 
-    private boolean addQueryParameter(StringBuilder mailto, String field, String value, boolean hasQueryParameters) {
+    private fun addQueryParameter(mailto: StringBuilder, field: String, value: String?, hasQueryParameters: Boolean): Boolean {
         if (value == null) {
-            return hasQueryParameters;
+            return hasQueryParameters
         }
-
-        mailto.append(hasQueryParameters ? '&' : '?').append(field).append('=').append(Uri.encode(value));
-
-        return true;
+        mailto.append(if (hasQueryParameters) '&' else '?').append(field).append('=').append(Uri.encode(value))
+        return true
     }
 
-    private boolean addRecipientQueryParameters(StringBuilder mailto, String field, Set<String> recipients,
-            boolean hasQueryParameters) {
+    private fun addRecipientQueryParameters(
+        mailto: StringBuilder, field: String, recipients: Set<String>,
+        hasQueryParameters: Boolean
+    ): Boolean {
         if (recipients.isEmpty()) {
-            return hasQueryParameters;
+            return hasQueryParameters
         }
-
-        mailto.append(hasQueryParameters ? '&' : '?').append(field).append('=');
-        addRecipients(mailto, recipients);
-
-        return true;
+        mailto.append(if (hasQueryParameters) '&' else '?').append(field).append('=')
+        addRecipients(mailto, recipients)
+        return true
     }
 
-    private void addRecipients(StringBuilder mailto, Set<String> recipients) {
+    private fun addRecipients(mailto: StringBuilder, recipients: Set<String>) {
         if (recipients.isEmpty()) {
-            return;
+            return
         }
-
-        for (String recipient : recipients) {
-            mailto.append(encodeRecipient(recipient));
-            mailto.append(',');
+        for (recipient in recipients) {
+            mailto.append(encodeRecipient(recipient))
+            mailto.append(',')
         }
-
-        mailto.setLength(mailto.length() - 1);
+        mailto.setLength(mailto.length - 1)
     }
 
-    private void checkEmail(String email) {
-        checkNotNull(email);
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            throw new IllegalArgumentException("Argument is not a valid email address (according to " +
-                    "Patterns.EMAIL_ADDRESS)");
+    private fun checkEmail(email: String) {
+        checkNotNull(email)
+        require(Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            "Argument is not a valid email address (according to " +
+                    "Patterns.EMAIL_ADDRESS)"
         }
     }
 
-    private void checkNoLineBreaks(String text) {
-        boolean containsCarriageReturn = text.indexOf('\r') != -1;
-        boolean containsLineFeed = text.indexOf('\n') != -1;
+    private fun checkNoLineBreaks(text: String) {
+        val containsCarriageReturn = text.indexOf('\r') != -1
+        val containsLineFeed = text.indexOf('\n') != -1
+        require(!(containsCarriageReturn || containsLineFeed)) { "Argument must not contain line breaks" }
+    }
 
-        if (containsCarriageReturn || containsLineFeed) {
-            throw new IllegalArgumentException("Argument must not contain line breaks");
+    companion object {
+        /**
+         * Create a builder to create an [Intent.ACTION_SENDTO] intent or to launch that intent.
+         *
+         * @param context
+         * The `Context` that will be used to launch the intent
+         *
+         * @return An email intent builder
+         */
+        fun from(context: Context): EmailIntentBuilder {
+            return EmailIntentBuilder(context)
+        }
+
+        private fun <T> checkNotNull(`object`: T): T {
+            requireNotNull(`object`) { "Argument must not be null" }
+            return `object`
+        }
+
+        fun encodeRecipient(recipient: String): String {
+            val index = recipient.lastIndexOf('@')
+            val localPart = recipient.substring(0, index)
+            val host = recipient.substring(index + 1)
+            return Uri.encode(localPart) + "@" + Uri.encode(host)
+        }
+
+        fun fixLineBreaks(text: String): String {
+            return text.replace("\r\n".toRegex(), "\n").replace('\r', '\n').replace("\n".toRegex(), "\r\n")
         }
     }
 
-    @NotNull
-    private static <T> T checkNotNull(T object) {
-        if (object == null) {
-            throw new IllegalArgumentException("Argument must not be null");
-        }
-
-        return object;
-    }
-
-    @NotNull
-    static String encodeRecipient(String recipient) {
-        int index = recipient.lastIndexOf('@');
-        String localPart = recipient.substring(0, index);
-        String host = recipient.substring(index + 1);
-        return Uri.encode(localPart) + "@" + Uri.encode(host);
-    }
-
-    @NotNull
-    static String fixLineBreaks(String text) {
-        return text.replaceAll("\r\n", "\n").replace('\r', '\n').replaceAll("\n", "\r\n");
-    }
 }

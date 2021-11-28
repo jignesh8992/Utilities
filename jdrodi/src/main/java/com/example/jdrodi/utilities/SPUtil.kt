@@ -32,11 +32,7 @@ class SPUtil(mContext: Context) {
     private val defTrue = true
     private val defFalse = false
     private val defString: String? = null
-    private val sp: SharedPreferences
-
-    init {
-        sp = SharedPreferences(mContext)
-    }
+    private val sp: SharedPreferences = SharedPreferences(mContext)
 
 
     // ToDo Save and get boolean value

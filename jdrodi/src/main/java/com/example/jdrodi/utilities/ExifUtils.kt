@@ -1,34 +1,29 @@
-package com.example.jdrodi.utilities;
+package com.example.jdrodi.utilities
 
-import android.media.ExifInterface;
-import android.text.TextUtils;
+import android.text.TextUtils
+import androidx.exifinterface.media.ExifInterface
+import java.lang.Exception
 
-public class ExifUtils {
-    private ExifUtils() {
-    }
-
-    public static int getExifRotation(String str) {
-        try {
-            String attribute = new ExifInterface(str).getAttribute(androidx.exifinterface.media.ExifInterface.TAG_ORIENTATION);
-            if (TextUtils.isEmpty(attribute)) {
-                return 0;
-            }
-            int parseInt = Integer.parseInt(attribute);
-            if (parseInt == 1) {
-                return 0;
-            }
-            if (parseInt == 3) {
-                return 180;
-            }
-            if (parseInt == 6) {
-                return 90;
-            }
-            if (parseInt != 8) {
-                return 0;
-            }
-            return 270;
-        } catch (Exception unused) {
-            return 0;
+fun getExifRotation(str: String): Int {
+    return try {
+        val attribute = android.media.ExifInterface(str).getAttribute(ExifInterface.TAG_ORIENTATION)
+        if (TextUtils.isEmpty(attribute)) {
+            return 0
         }
+        val parseInt = attribute!!.toInt()
+        if (parseInt == 1) {
+            return 0
+        }
+        if (parseInt == 3) {
+            return 180
+        }
+        if (parseInt == 6) {
+            return 90
+        }
+        if (parseInt != 8) {
+            0
+        } else 270
+    } catch (unused: Exception) {
+        0
     }
 }

@@ -1,33 +1,24 @@
-package com.example.jdrodi.utilities;
+package com.example.jdrodi.utilities
 
-import android.graphics.Rect;
-import android.view.View;
-
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+import android.graphics.Rect
+import android.view.View
+import androidx.recyclerview.widget.RecyclerView.ItemDecoration
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * @author: Jignesh N Patel
  * @date: 17-Feb-2021 9:22 PM
  */
-public class LinearSpaceItemDecoration extends RecyclerView.ItemDecoration {
+class LinearSpaceItemDecoration(private val horizontalSpacing: Int, private val verticalSpacing: Int) : ItemDecoration() {
 
-    private int horizontalSpacing = 0;
-    private int verticalSpacing = 0;
-
-    public LinearSpaceItemDecoration(int horizontalSpacing, int verticalSpacing) {
-        this.horizontalSpacing = horizontalSpacing;
-        this.verticalSpacing = verticalSpacing;
-    }
-
-    @Override
-    public void getItemOffsets(@NonNull Rect outRect, @NonNull View view, @NonNull RecyclerView parent, @NonNull RecyclerView.State state) {
-        super.getItemOffsets(outRect, view, parent, state);
-        outRect.right = horizontalSpacing;
+    override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+        super.getItemOffsets(outRect, view, parent, state)
+        outRect.right = horizontalSpacing
         if (parent.getChildLayoutPosition(view) != 0) {
-            outRect.left = horizontalSpacing;
+            outRect.left = horizontalSpacing
         }
-      //  outRect.top = verticalSpacing;
-        outRect.bottom = verticalSpacing;
+        //  outRect.top = verticalSpacing;
+        outRect.bottom = verticalSpacing
     }
+
 }
