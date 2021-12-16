@@ -1,4 +1,4 @@
-package com.example.jdrodi
+package com.example.jdrodi.base
 
 import android.os.Bundle
 import android.os.SystemClock
@@ -7,42 +7,45 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
+import androidx.viewbinding.ViewBinding
 import com.example.jdrodi.utilities.SPUtil
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 
+abstract class BaseVBFragment<VB : ViewBinding> : Fragment(), View.OnClickListener, CoroutineScope by CoroutineScope(Dispatchers.Main) {
 
-/**
- * BaseFragment.kt - A simple class contains some modifications to the native fragment.
- * @author  Jignesh N Patel
- * @date 24-12-2019
- */
+    protected val Any.TAG: String
+        get() {
+            val tag = this::class.java.canonicalName ?: this::class.java.name
+            return if (tag.length <= 23) tag else tag.substring(0, 23)
+        }
 
-abstract class BaseFragment : Fragment(), View.OnClickListener {
+    protected lateinit var mBinding: VB
+        private set
 
+    abstract val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> VB
 
-    lateinit var mContext: FragmentActivity // Context of the current activity
+    protected abstract val mActivity: FragmentActivity // Context of the current activity
     lateinit var sp: SPUtil // Obj. of SharedPreference
 
     // variable to track event time
     var mLastClickTime: Long = 0
     var mMinDuration = 1000
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(getLayoutId(), container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        mBinding = bindingInflater.invoke(inflater, container, false)
+        return mBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mContext = activity!!
-        sp = SPUtil(mContext)
+        sp = SPUtil(mActivity)
         initViews()
         initAds()
         initData()
         initActions()
     }
-
-    abstract fun getLayoutId(): Int
 
     /**
      * ToDo. Use this method to setup views.
@@ -62,12 +65,18 @@ abstract class BaseFragment : Fragment(), View.OnClickListener {
     /**
      * ToDo. Use this method to initialize action on view components.
      */
-    abstract fun initActions()
+    open fun initActions() {}
 
     override fun onClick(view: View) {
         if (SystemClock.elapsedRealtime() - mLastClickTime < mMinDuration) {
             return
         }
         mLastClickTime = SystemClock.elapsedRealtime()
+    }
+
+
+    override fun onDestroyView() {
+        coroutineContext[Job]?.cancel()
+        super.onDestroyView()
     }
 }

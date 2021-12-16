@@ -1,4 +1,4 @@
-package com.example.jdrodi
+package com.example.jdrodi.base
 
 import android.app.Activity
 import android.os.Bundle
@@ -17,7 +17,14 @@ import com.example.jdrodi.utilities.SPUtil
 
 abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
 
-    lateinit var mContext: Activity // Context of the current activity
+    protected val Any.TAG: String
+        get() {
+            val tag = this::class.java.canonicalName ?: this::class.java.name
+            return if (tag.length <= 23) tag else tag.substring(0, 23)
+        }
+
+
+    abstract val mActivity: Activity // Context of the current activity
     lateinit var sp: SPUtil // Obj. of SharedPreference
     private var jpDialog: JProgress? = null
 
@@ -27,9 +34,8 @@ abstract class BaseActivity : FragmentActivity(), View.OnClickListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mContext = getContext()
-        sp = SPUtil(mContext)
-        jpDialog = JProgress.create(mContext, JProgress.Style.SPIN_INDETERMINATE)
+        sp = SPUtil(mActivity)
+        jpDialog = JProgress.create(mActivity, JProgress.Style.SPIN_INDETERMINATE)
     }
 
     override fun setContentView(layout: Int) {

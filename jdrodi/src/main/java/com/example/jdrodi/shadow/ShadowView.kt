@@ -333,7 +333,7 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
         }
     }
 
-    private fun getShadowMarginMax() = intArrayOf(shadowMarginLeft, shadowMarginTop, shadowMarginRight, shadowMarginBottom).max()?.toFloat() ?: 0f
+    private fun getShadowMarginMax() = intArrayOf(shadowMarginLeft, shadowMarginTop, shadowMarginRight, shadowMarginBottom).maxOrNull()?.toFloat() ?: 0f
 
     fun drawForeground(canvas: Canvas) {
         foregroundDraw?.let {

@@ -9,7 +9,7 @@ import android.widget.LinearLayout;
 
 import com.example.jdrodi.R;
 
-class BackgroundLayout extends LinearLayout {
+public class BackgroundLayout extends LinearLayout {
 
     private float mCornerRadius;
     private int mBackgroundColor;
