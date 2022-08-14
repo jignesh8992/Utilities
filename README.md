@@ -17,7 +17,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	       implementation 'com.github.jignesh8992:Utilities:3.1'
+	       implementation 'com.github.jignesh8992:Utilities: [![](https://jitpack.io/v/jignesh8992/Utilities.svg)](https://jitpack.io/#jignesh8992/Utilities)'
 	}
 	
 ### Extensive functions:
