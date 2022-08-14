@@ -14,7 +14,6 @@
             <option value="$PROJECT_DIR$/jdrodi" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

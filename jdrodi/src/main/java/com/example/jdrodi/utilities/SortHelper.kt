@@ -3,7 +3,6 @@ package com.example.jdrodi.utilities
 import android.os.Build
 import androidx.annotation.RequiresApi
 import java.io.File
-import java.util.*
 
 object SortHelper
 
@@ -22,7 +21,11 @@ fun sortVideos(list: ArrayList<File>): ArrayList<String> {
         val path = list[i].path
         when (getFileType(File(path))) {
             FileType.VIDEO -> sortedList.add(path)
+            else -> {
+                println("sortVideos -> $path")
+            }
         }
+
     }
     return sortedList
 }
@@ -35,6 +38,9 @@ fun sortPhotos(list: ArrayList<File>): ArrayList<String> {
         val path = list[i].path
         when (getFileType(File(path))) {
             FileType.IMAGE -> sortedList.add(path)
+            else -> {
+                println("sortPhotos -> $path")
+            }
         }
     }
     return sortedList
@@ -48,6 +54,9 @@ fun sortPhotos2(list: ArrayList<String>): ArrayList<String> {
         val path = list[i]
         when (getFileType(File(path))) {
             FileType.IMAGE -> sortedList.add(path)
+            else -> {
+                println("sortPhotos2 -> $path")
+            }
         }
     }
     return sortedList
@@ -61,6 +70,9 @@ fun sortVideos2(list: ArrayList<String>): ArrayList<String> {
         val path = list[i]
         when (getFileType(File(path))) {
             FileType.VIDEO -> sortedList.add(path)
+            else -> {
+                println("sortVideos2 -> $path")
+            }
         }
     }
     return sortedList
@@ -78,6 +90,9 @@ fun loadLatest(list: ArrayList<File>): ArrayList<String> {
         val path = list[i].path
         when (getFileType(File(path))) {
             FileType.IMAGE, FileType.VIDEO -> sortedList.add(path)
+            else -> {
+                println("loadLatest -> $path")
+            }
         }
     }
     return sortedList
