@@ -1,0 +1,78 @@
+Index: .idea/kotlinc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/kotlinc.xml b/.idea/kotlinc.xml
+new file mode 100644
+--- /dev/null	(date 1697884090837)
++++ b/.idea/kotlinc.xml	(date 1697884090837)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="KotlinJpsPluginSettings">
++    <option name="version" value="1.7.10" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"DesignSurface\">\r\n    <option name=\"filePathToZoomLevelMap\">\r\n      <map>\r\n        <entry key=\"..\\:/Github/Utilities/app/src/main/res/layout/activity_main.xml\" value=\"0.31302083333333336\" />\r\n        <entry key=\"..\\:/Github/Utilities/app/src/main/res/layout/fragment_blank.xml\" value=\"0.31302083333333336\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/drawable/ic_play_progress_seek.xml\" value=\"0.1140625\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/drawable/progress_rotate.xml\" value=\"0.3333333333333333\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/drawable/search_cursor.xml\" value=\"0.33697916666666666\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/drawable/uvv_progress_rotate.xml\" value=\"0.3333333333333333\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/drawable/uvv_star_play_progress_seek.xml\" value=\"0.3333333333333333\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/layout/expandabletextview.xml\" value=\"0.31666666666666665\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/layout/layout_error.xml\" value=\"0.31302083333333336\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/layout/layout_loading.xml\" value=\"0.31302083333333336\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/layout/uvv_on_error_layout.xml\" value=\"0.31302083333333336\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/layout/uvv_on_loading_layout.xml\" value=\"0.31302083333333336\" />\r\n        <entry key=\"..\\:/Github/Utilities/jdrodi/src/main/res/layout/uvv_player_controller.xml\" value=\"0.31302083333333336\" />\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_11\" default=\"true\" project-jdk-name=\"11\" project-jdk-type=\"JavaSDK\">\r\n    <output url=\"file://$PROJECT_DIR$/build/classes\" />\r\n  </component>\r\n  <component name=\"ProjectType\">\r\n    <option name=\"id\" value=\"Android\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision d324e257ab2e66b44ed010e3eb30a7327b36cd1b)
++++ b/.idea/misc.xml	(date 1697885253842)
+@@ -1,4 +1,3 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="DesignSurface">
+     <option name="filePathToZoomLevelMap">
+@@ -19,7 +18,7 @@
+       </map>
+     </option>
+   </component>
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
+     <output url="file://$PROJECT_DIR$/build/classes" />
+   </component>
+   <component name="ProjectType">
+Index: .idea/compiler.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"CompilerConfiguration\">\r\n    <bytecodeTargetLevel target=\"11\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/compiler.xml b/.idea/compiler.xml
+--- a/.idea/compiler.xml	(revision d324e257ab2e66b44ed010e3eb30a7327b36cd1b)
++++ b/.idea/compiler.xml	(date 1696178539302)
+@@ -1,6 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+   <component name="CompilerConfiguration">
+-    <bytecodeTargetLevel target="11" />
++    <bytecodeTargetLevel target="17" />
+   </component>
+ </project>
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleMigrationSettings\" migrationVersion=\"1\" />\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"testRunner\" value=\"GRADLE\" />\r\n        <option name=\"distributionType\" value=\"DEFAULT_WRAPPED\" />\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n            <option value=\"$PROJECT_DIR$/jdrodi\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision d324e257ab2e66b44ed010e3eb30a7327b36cd1b)
++++ b/.idea/gradle.xml	(date 1697885969524)
+@@ -7,6 +7,7 @@
+         <option name="testRunner" value="GRADLE" />
+         <option name="distributionType" value="DEFAULT_WRAPPED" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
++        <option name="gradleJvm" value="jbr-17" />
+         <option name="modules">
+           <set>
+             <option value="$PROJECT_DIR$" />
