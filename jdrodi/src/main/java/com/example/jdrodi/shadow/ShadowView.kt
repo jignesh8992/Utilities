@@ -289,7 +289,7 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
         }
     }
 
-    override fun onDraw(canvas: Canvas?) {
+    override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
 
         canvas?.let {
@@ -310,7 +310,7 @@ open class ShadowView @JvmOverloads constructor(context: Context?, attributeSet:
         }
     }
 
-    override fun draw(canvas: Canvas?) {
+    override fun draw(canvas: Canvas) {
         super.draw(canvas)
 
         canvas?.let {

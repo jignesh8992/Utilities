@@ -210,7 +210,7 @@ open class MaterialSpinner @JvmOverloads constructor(
             // Create the color state list.
             //noinspection Recycle
             colorStateList = context.obtainStyledAttributes(
-                attrs, intArrayOf(R.attr.colorControlActivated, R.attr.colorControlNormal)
+                attrs, intArrayOf(androidx.appcompat.R.attr.colorControlActivated, androidx.appcompat.R.attr.colorControlNormal)
             ).run {
                 val activated = getColor(0, 0)
                 @SuppressLint("ResourceType") val normal = getColor(1, 0)
@@ -338,7 +338,7 @@ open class MaterialSpinner @JvmOverloads constructor(
     override fun setError(errorText: CharSequence?) {
         super.setError(errorText)
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            findViewById<TextView>(R.id.textinput_error)?.let { errorView ->
+            findViewById<TextView>(com.google.android.material.R.id.textinput_error)?.let { errorView ->
                 errorView.gravity = editText.gravity
                 when (val p = errorView.parent) {
                     is View -> {

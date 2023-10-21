@@ -164,13 +164,13 @@ class MultiTouchListener : View.OnTouchListener {
     }
 
     private inner class GestureTap : GestureDetector.SimpleOnGestureListener() {
-        override fun onSingleTapUp(e: MotionEvent?): Boolean {
+        override fun onSingleTapUp(e: MotionEvent): Boolean {
             if (tapDetector != null)
                 tapDetector!!.onSingleTap()
             return super.onSingleTapUp(e)
         }
 
-        override fun onDoubleTap(e: MotionEvent?): Boolean {
+        override fun onDoubleTap(e: MotionEvent): Boolean {
             if (tapDetector != null)
                 tapDetector!!.onDoubleTap()
             return super.onDoubleTap(e)

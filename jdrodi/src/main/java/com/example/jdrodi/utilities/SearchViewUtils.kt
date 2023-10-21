@@ -38,7 +38,7 @@ fun SearchView.initSearchView(hint: String, textHintColor: Int = R.color.grey_40
     this.requestFocusFromTouch()
     this.isSubmitButtonEnabled = false
     this.onActionViewExpanded()
-    val txtSearch: EditText = this.findViewById(R.id.search_src_text)
+    val txtSearch: EditText = this.findViewById(androidx.appcompat.R.id.search_src_text)
     txtSearch.hint = hint
     txtSearch.setHintTextColor(ContextCompat.getColor(this.context, textHintColor))
     txtSearch.setTextColor(ContextCompat.getColor(this.context, textColor))
@@ -54,16 +54,16 @@ fun Context.initSearchView(searchView: SearchView, searchHint: String, textHintC
     searchView.requestFocusFromTouch()
     searchView.isSubmitButtonEnabled = false
     searchView.onActionViewExpanded()
-    val closeButton: ImageView = searchView.findViewById(R.id.search_close_btn)
+    val closeButton: ImageView = searchView.findViewById(androidx.appcompat.R.id.search_close_btn)
     if (cancelIcon != null)
         closeButton.setImageResource(cancelIcon)
-    val txtSearch: EditText = searchView.findViewById(R.id.search_src_text)
+    val txtSearch: EditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text)
     txtSearch.hint = searchHint
     txtSearch.textSize = resources.getDimension(R.dimen._5ssp)
     txtSearch.setHintTextColor(ContextCompat.getColor(this, textHintColor))
     txtSearch.setTextColor(ContextCompat.getColor(this, textColor))
     try {
-        val searchTextView: AutoCompleteTextView = searchView.findViewById(R.id.search_src_text)
+        val searchTextView: AutoCompleteTextView = searchView.findViewById(androidx.appcompat.R.id.search_src_text)
         val mCursorDrawableRes: Field = TextView::class.java.getDeclaredField("mCursorDrawableRes")
         mCursorDrawableRes.isAccessible = true
         mCursorDrawableRes.set(searchTextView, R.drawable.search_cursor) //This sets the
@@ -111,9 +111,9 @@ fun Activity.hideSearch(searchView: SearchView, viewSearchView: View, viewToolba
 @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
 fun Activity.circleReveal(searchView: View, posFromRight: Int, containsOverflow: Boolean, isShow: Boolean, viewToolbar: View? = null) {
     var width = searchView.width
-    if (posFromRight > 0) width -= posFromRight * resources.getDimensionPixelSize(R.dimen.abc_action_button_min_width_material) - resources
-        .getDimensionPixelSize(R.dimen.abc_action_button_min_width_material) / 2
-    if (containsOverflow) width -= resources.getDimensionPixelSize(R.dimen.abc_action_button_min_width_overflow_material)
+    if (posFromRight > 0) width -= posFromRight * resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_action_button_min_width_material) - resources
+        .getDimensionPixelSize(androidx.appcompat.R.dimen.abc_action_button_min_width_material) / 2
+    if (containsOverflow) width -= resources.getDimensionPixelSize(androidx.appcompat.R.dimen.abc_action_button_min_width_overflow_material)
     val cx = width
     val cy = searchView.height / 2
     val anim: Animator = if (isShow) ViewAnimationUtils.createCircularReveal(searchView, cx, cy, 0f, width.toFloat()) else ViewAnimationUtils.createCircularReveal(

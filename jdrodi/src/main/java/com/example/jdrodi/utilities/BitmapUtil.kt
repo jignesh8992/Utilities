@@ -400,7 +400,7 @@ fun insertImage(cr: ContentResolver, source: Bitmap?, title: String?, descriptio
         if (source != null) {
             val imageOut = cr.openOutputStream(url!!)
             try {
-                source.compress(Bitmap.CompressFormat.JPEG, 50, imageOut)
+                source.compress(Bitmap.CompressFormat.JPEG, 50, imageOut!!)
             } finally {
                 imageOut!!.close()
             }
@@ -453,7 +453,7 @@ private fun storeThumbnail(cr: ContentResolver, source: Bitmap, id: Long, width:
     val url = cr.insert(MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI, values)
     return try {
         val thumbOut = cr.openOutputStream(url!!)
-        thumb.compress(Bitmap.CompressFormat.JPEG, 100, thumbOut)
+        thumb.compress(Bitmap.CompressFormat.JPEG, 100, thumbOut!!)
         thumbOut!!.close()
         thumb
     } catch (ex: FileNotFoundException) {

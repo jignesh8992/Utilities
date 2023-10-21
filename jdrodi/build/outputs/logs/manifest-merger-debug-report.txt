@@ -1,0 +1,43 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:1:1-19:12
+INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:1:1-19:12
+	package
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:2:5-33
+		INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:4:5-79
+	android:name
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:4:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:5:22-64
+application
+ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:6:5-18:19
+provider#androidx.core.content.FileProvider
+ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:8:9-16:20
+	android:grantUriPermissions
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:12:13-47
+	android:authorities
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:10:13-64
+	android:exported
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:11:13-37
+	android:name
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:9:13-62
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:13:13-15:58
+	android:resource
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:15:17-55
+	android:name
+		ADDED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:14:17-67
+uses-sdk
+INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml
+INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml

@@ -19,6 +19,8 @@ abstract class OnSingleClickListener : View.OnClickListener {
     abstract fun onSingleClick(view: View)
 
     override fun onClick(view: View) {
+
+
         val elapsedTime = SystemClock.uptimeMillis() - mLastClickTime
         mLastClickTime = SystemClock.uptimeMillis()
         if (elapsedTime <= MIN_CLICK_INTERVAL) return

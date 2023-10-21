@@ -1,0 +1,35 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.example.jdrodi" >
+4
+5    <uses-sdk android:minSdkVersion="23" />
+6
+7    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+7-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:4:5-79
+7-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:4:22-76
+8    <uses-permission android:name="android.permission.INTERNET" />
+8-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:5:5-67
+8-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:5:22-64
+9
+10    <application>
+10-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:6:5-18:19
+11        <provider
+11-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:8:9-16:20
+12            android:name="androidx.core.content.FileProvider"
+12-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:9:13-62
+13            android:authorities="${applicationId}.fileprovider"
+13-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:10:13-64
+14            android:exported="false"
+14-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:11:13-37
+15            android:grantUriPermissions="true" >
+15-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:12:13-47
+16            <meta-data
+16-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:13:13-15:58
+17                android:name="android.support.FILE_PROVIDER_PATHS"
+17-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:14:17-67
+18                android:resource="@xml/provider_paths" />
+18-->D:\Github\Utilities\jdrodi\src\main\AndroidManifest.xml:15:17-55
+19        </provider>
+20    </application>
+21
+22</manifest>
