@@ -20,6 +20,7 @@ class AppController : Application() {
         context = this
     }
 
+    // Just for log
     fun isDebuggable(): Boolean {
         val applicationInfo = context!!.packageManager.getApplicationInfo(context!!.packageName, 0)
         return applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
